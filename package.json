@@ -1,0 +1,20 @@
+{
+   "name": "portfolio",
+   "version": "1.0.0",
+   "description": "This is my initial production of a portfolio website, created as part of curriculum in Career Foundry's Web Developer Bootcamp program. \r Doug Hill Nov 10 2023",
+   "main": "index.js",
+   "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "browser-sync start --server --files \"*.html, css/*.css\"",
+      "start-bs": "browser-sync start --server --files \"*.html, css/*.css\"",
+      "start-http": "nodemon --watch . -e html,css,js --exec \"http-server\""
+   },
+   "keywords": [],
+   "author": "",
+   "license": "ISC",
+   "devDependencies": {
+      "browser-sync": "^3.0.3",
+      "http-server": "^14.1.1",
+      "nodemon": "^3.1.0"
+   }
+}

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Doug Hill Portfolio</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Young+Serif&display=swap">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto:wght@400&display=swap">
+   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+
+   <link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Gloria+Hallelujah&display=swap"
+      rel="stylesheet">
+
+   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+   <link rel="stylesheet" type="text/css" href="css/normalize.css">
+   <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+
+<body>
+
+   <header class="page-header">
+      <!--LOGO UPPER LEFT-->
+      <div onclick="window.location.href='index.html';" class="logo_text">
+         DH<span class="small">_Web_Dev_ ( ) { portfolio site } ;</span>
+      </div>
+
+      <!--MENU BAR-->
+      <nav class="page-header__item special">
+         <ul role="menubar" class="navigation-list">
+            <li role="presentation">
+               <a href="index.html" class="navigation-list__item navigation-list__item--active" role="menuitem"
+                  data-target="home" aria-label="Home Page">Home</a>
+            </li>
+            <li role="presentation">
+               <a href="index.html#about" class="navigation-list__item" role="menuitem" data-target="about"
+                  aria-label="Information about me">About</a>
+            </li>
+            <li role="presentation">
+               <a href="index.html#work" class="navigation-list__item" role="menuitem" data-target="work"
+                  aria-label="List of projects I have completed">Work</a>
+            </li>
+            <li role="presentation">
+               <a href="index.html#contact" class="navigation-list__item" role="menuitem" data-target="contact"
+                  aria-label="How to contact me">Contact</a>
+            </li>
+         </ul>
+      </nav>
+      <!-- LIGHT/DARK THEME TOGGLE BUTTON -->
+
+      <!-- LIGHT/DARK THEME TOGGLE BUTTON -->
+      <div id="toggle" class="theme-toggle active" onclick="toggleTheme()">
+         <div class="icon moon-icon">
+            <!-- Inline SVG for moon -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+               <path
+                  d="M12,17c-2.76,0-5-2.24-5-5s2.24-5,5-5,5,2.24,5,5-2.24,5-5,5Zm0-8c-1.65,0-3,1.35-3,3s1.35,3,3,3,3-1.35,3-3-1.35-3-3-3Zm1-5V1c0-.55-.45-1-1-1s-1,.45-1,1v3c0,.55,.45,1,1,1s1-.45,1-1Zm0,19v-3c0-.55-.45-1-1-1s-1,.45-1,1v3c0,.55,.45,1,1,1s1-.45,1-1ZM5,12c0-.55-.45-1-1-1H1c-.55,0-1,.45-1,1s.45,1,1,1h3c.55,0,1-.45,1-1Zm19,0c0-.55-.45-1-1-1h-3c-.55,0-1,.45-1,1s.45,1,1,1h3c.55,0,1-.45,1-1ZM6.71,6.71c.39-.39,.39-1.02,0-1.41l-2-2c-.39-.39-1.02-.39-1.41,0s-.39,1.02,0,1.41l2,2c.2,.2,.45,.29,.71,.29s.51-.1,.71-.29Zm14,14c.39-.39,.39-1.02,0-1.41l-2-2c-.39-.39-1.02-.39-1.41,0s-.39,1.02,0,1.41l2,2c.2,.2,.45,.29,.71,.29s.51-.1,.71-.29Zm-16,0l2-2c.39-.39,.39-1.02,0-1.41s-1.02-.39-1.41,0l-2,2c-.39,.39-.39,1.02,0,1.41,.2,.2,.45,.29,.71,.29s.51-.1,.71-.29ZM18.71,6.71l2-2c.39-.39,.39-1.02,0-1.41s-1.02-.39-1.41,0l-2,2c-.39,.39-.39,1.02,0,1.41,.2,.2,.45,.29,.71,.29s.51-.1,.71-.29Z" />
+            </svg>
+         </div>
+         <i class="indicator"></i>
+         <div class="icon sun-icon">
+            <!-- Inline SVG for sun -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+               <path
+                  d="M15,24a12.021,12.021,0,0,1-8.914-3.966,11.9,11.9,0,0,1-3.02-9.309A12.122,12.122,0,0,1,13.085.152a13.061,13.061,0,0,1,5.031.205,2.5,2.5,0,0,1,1.108,4.226c-4.56,4.166-4.164,10.644.807,14.41a2.5,2.5,0,0,1-.7,4.32A13.894,13.894,0,0,1,15,24Zm.076-22a10.793,10.793,0,0,0-1.677.127,10.093,10.093,0,0,0-8.344,8.8A9.927,9.927,0,0,0,7.572,18.7,10.476,10.476,0,0,0,18.664,21.43a.5.5,0,0,0,.139-.857c-5.929-4.478-6.4-12.486-.948-17.449a.459.459,0,0,0,.128-.466.49.49,0,0,0-.356-.361A10.657,10.657,0,0,0,15.076,2Z" />
+            </svg>
+         </div>
+      </div>
+   </header>
+
+   <!-- Case-Study Listing-->
+   <main>
+
+      <div class="case-study">
+         <h1>myFlix API Project</h1>
+         <ol class="case-study-card">
+            <li class="case-study-card-image-left">
+               <img src="img/Mongo-Atlas.jpg" class="case-study-image" alt="Mongo Atlas screenshot">
+               <div>
+                  <h2>Overview</h2>
+                  <p>
+                     MyFlix API is a RESTful web service that provides movie data to the MyFlix Angular application.
+                     The API is built using Node.js, Express.js, and MongoDB, and it allows users to access information
+                     about movies, directors, and genres. The API supports user authentication, enabling users to
+                     register, log in, and manage their favorites list. By interacting with the MyFlix API, the
+                     MyFlix Angular application can display a list of movies, allow users to view movie details,
+                     and manage their favorites.
+                  </p>
+               </div>
+            </li>
+            <li class="case-study-card-image-right">
+               <div>
+                  <h2>Purpose & Context</h2>
+                  <p>The need to build a RESTful web service that provides movie data to the MyFlix Angular and React
+                     applications arose from the desire to learn how to create a responsive, interactive web application
+                     that allows users to browse, search, and manage movie information. By developing the MyFlix API,
+                     I was able to demonstrate my proficiency in back-end development, user authentication, and data
+                     management. The API serves as the foundation for the MyFlix Angular application, enabling users to
+                     access movie data and personalize their viewing experience.</p>
+
+                  </p>
+               </div>
+               <img src="img/Heroku.jpg" class="case-study-image" alt="Heroku screenshot">
+            </li>
+            <li>
+               <h2>Objective</h2>
+               <p>The goal of the MyFlix
+                  API project was to create a RESTful web service that provides movie data to the MyFlix Angular
+                  application. The API needed to support user authentication, enabling users to register, log in, and
+                  manage their favorites list. By interacting with the MyFlix API, the MyFlix Angular application can
+                  display a list of movies, allow users to view movie details, and manage their favorites. The API
+                  needed to be secure, scalable, and efficient, supporting CRUD operations for movie data and user
+                  authentication.</p>
+               </p>
+               <ul>
+                  <li>Build a RESTful web service using Node.js, Express.js, and MongoDB</li>
+                  <li>Implement user authentication with JWT tokens</li>
+                  <li>Support CRUD operations for movie data and user favorites</li>
+                  <li>Secure API endpoints with middleware and error handling</li>
+                  <li>Deploy the API to a cloud platform like Heroku or MongoDB Atlas</li>
+            </li>
+            </ul>
+            </ul>
+            </li>
+            <br>
+
+            <li>
+               <h1>Technology Stack Decisions</h1>
+               <p>The Project Brief required the use of specific technologies to build the MyFlix API. Here are the
+                  technology stack decisions I made for the project:</p>
+
+               </p>
+               </p>
+               <div class="case-study-card-tech-stack-container">
+                  <img src="img/mongodb-logo.jpg" class="case-study-card-tech-stack-container-image"
+                     alt="Mongo D B Logo">
+                  <div class="tech-info">
+                     <h3>MongoDB</h3>
+                     <p>MongoDB is a NoSQL database that stores data in flexible, JSON-like documents. By using MongoDB
+                        as the database for the MyFlix API, I was able to store movie data, user information, and
+                        favorites in a scalable, efficient manner. MongoDB's document-based data model allowed me to
+                        store complex data structures, perform fast queries, and scale horizontally as needed. By
+                        leveraging MongoDB's aggregation framework, indexing, and sharding capabilities, I was able to
+                        create a robust, high-performance database for managing movie data and user authentication.
+                     </p>
+                  </div>
+                  <img src="img/mongoose-logo.jpg" class="case-study-card-tech-stack-container-image"
+                     alt="Mongoose Logo">
+                  <div class="tech-info">
+                     <h3>Mongoose</h3>
+                     <p>Mongoose is an Object Data Modeling (ODM) library for MongoDB that provides a schema-based
+                        solution to model application data. By using Mongoose in the MyFlix API project, I was able to
+                        define data schemas, validate data, and interact with MongoDB in a more structured, efficient
+                        way. Mongoose's schema validation, middleware hooks, and query building capabilities helped me
+                        create a secure, reliable API that enforces data integrity, handles complex data operations, and
+                        integrates with Express.js seamlessly.
+                     </p>
+                  </div>
+                  <div class="tech-info">
+                     <h3>Node.js, Express.js</h3>
+                     <p>Node.js and Express.js are a powerful combination for building fast, scalable web applications.
+                        By using Node.js as the runtime environment and Express.js as the web application framework, I
+                        was able to create a RESTful API that handles HTTP requests, routes, and middleware efficiently.
+                        Node.js's event-driven, non-blocking I/O model and Express.js's minimalist, flexible design
+                        enabled me to build a lightweight, high-performance API that serves movie data, user
+                        authentication, and favorites. By leveraging Node.js's ecosystem of modules and Express.js's
+                        middleware, routing, and error handling, I was able to create a secure, efficient API that
+                        interacts with MongoDB and supports CRUD operations for movie data and user favorites.
+                     </p>
+                  </div>
+                  <img src="img/node-express-logo.jpg" class="case-study-card-tech-stack-container-image"
+                     alt="Node Express J S Logo">
+                  <div class="tech-info">
+                     </p>
+                     <h3>REST Architecture</h3>
+                     <p>REST (Representational State Transfer) is an architectural style for designing networked
+                        applications that use HTTP methods to perform CRUD operations on resources. By following REST
+                        principles in the MyFlix API project, I was able to create a scalable, stateless web service
+                        that
+                        exposes movie data, user information, and favorites as resources. RESTful endpoints were
+                        designed
+                        to support CRUD operations for movie data and user favorites, enabling clients to interact with
+                        the API using standard HTTP methods like GET, POST, PUT, and DELETE. By following RESTful
+                        conventions for resource naming, URL structure, and response formats, I was able to create a
+                        predictable, easy-to-use API that conforms to industry best practices and standards.
+                     </p>
+                     </p>
+                  </div>
+                  <img src="img/rest-logo.jpg" class="case-study-card-tech-stack-container-image"
+                     alt="REST Architecture Logo">
+               </div>
+            </li>
+         </ol>
+         <br>
+         <ol class="case-study-card">
+            <li>
+               <h1>Conclusion</h1>
+               <p>Developing the MyFlix API project was a rewarding experience that allowed me to demonstrate my
+                  proficiency in back-end development, user authentication, and data management. By building a RESTful
+                  web service that provides movie data to the MyFlix Angular application, I was able to showcase my
+                  skills in Node.js, Express.js, and MongoDB. The API supports user authentication, enabling users to
+                  register, log in, and manage their favorites list. By interacting with the MyFlix API, the MyFlix
+                  Angular application can display a list of movies, allow users to view movie details, and manage their
+                  favorites. The API is secure, scalable, and efficient, supporting CRUD operations for movie data and
+                  user authentication. By deploying the API to a cloud platform like Heroku or MongoDB Atlas, I was able
+                  to create a production-ready web service that provides movie data to the MyFlix Angular application.
+               </p>
+
+               <button type="button" class="nav_button" onclick="window.location.href='index.html#work';">Back to My
+                  Projects</button>
+               <button type="button" class="nav_button" onclick="window.location.href='index.html';">Back to
+                  Home</button>
+            </li>
+         </ol>
+      </div>
+   </main>
+
+
+   <footer class="page_footer">
+      <p class="footer_text">Find me on</p>
+      <div class="social-media">
+         <a href="https://github.com/stix2you" class="social-media__link" target="_blank">
+            <img src="img/github_icon.svg" class="social-media__img" alt="github logo">
+         </a>
+         <!-- LinkedIn link -->
+         <a href="https://www.linkedin.com/in/doug-hill-8b7634288/" class="social-media__link" target="_blank">
+            <img src="img/linkedin_icon.svg" class="social-media__img" alt="linkedin logo">
+         </a>
+      </div>
+   </footer>
+
+   <!--tota11y accessibility checker
+    <script src="js/tota11y.min.js"></script> -->
+   <script src="js/theme-toggle.js"></script>
+</body>
+
+</html>

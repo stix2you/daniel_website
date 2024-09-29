@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Daniel Hill Portfolio</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Young+Serif&display=swap">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto:wght@400&display=swap">
+   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+
+   <link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Gloria+Hallelujah&display=swap"
+      rel="stylesheet">
+
+   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+   <link rel="stylesheet" type="text/css" href="css/normalize.css">
+   <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+
+<body>
+
+   <header class="page-header">
+      <!--LOGO UPPER LEFT-->
+      <div onclick="window.location.href='index.html';" class="logo_text">
+         DH<span class="small"> Daniel Hill - Video Journalist</span>
+      </div>
+
+      <!--MENU BAR-->
+      <nav class="page-header__item special">
+         <ul role="menubar" class="navigation-list">
+            <li role="presentation">
+               <a href="index.html" class="navigation-list__item navigation-list__item--active" role="menuitem"
+                  data-target="home" aria-label="Home Page">Home</a>
+            </li>
+            <li role="presentation">
+               <a href="#about" class="navigation-list__item" role="menuitem" data-target="about"
+                  aria-label="Information about me">About</a>
+            </li>
+            <li role="presentation">
+               <a href="#skills" class="navigation-list__item" role="menuitem" data-target="skills"
+                  aria-label="My Tech Skills">Skills</a>
+            </li>
+            <li role="presentation">
+               <a href="#work" class="navigation-list__item" role="menuitem" data-target="work"
+                  aria-label="List of projects I have completed">Work</a>
+            </li>
+            <li role="presentation">
+               <a href="#contact" class="navigation-list__item" role="menuitem" data-target="contact"
+                  aria-label="How to contact me">Contact</a>
+            </li>
+         </ul>
+      </nav>
+
+      <!-- LIGHT/DARK THEME TOGGLE BUTTON -->
+      <div id="toggle" class="theme-toggle active" onclick="toggleTheme()">
+         <div class="icon moon-icon">
+            <!-- Inline SVG for moon -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+               <path
+                  d="M12,17c-2.76,0-5-2.24-5-5s2.24-5,5-5,5,2.24,5,5-2.24,5-5,5Zm0-8c-1.65,0-3,1.35-3,3s1.35,3,3,3,3-1.35,3-3-1.35-3-3-3Zm1-5V1c0-.55-.45-1-1-1s-1,.45-1,1v3c0,.55,.45,1,1,1s1-.45,1-1Zm0,19v-3c0-.55-.45-1-1-1s-1,.45-1,1v3c0,.55,.45,1,1,1s1-.45,1-1ZM5,12c0-.55-.45-1-1-1H1c-.55,0-1,.45-1,1s.45,1,1,1h3c.55,0,1-.45,1-1Zm19,0c0-.55-.45-1-1-1h-3c-.55,0-1,.45-1,1s.45,1,1,1h3c.55,0,1-.45,1-1ZM6.71,6.71c.39-.39,.39-1.02,0-1.41l-2-2c-.39-.39-1.02-.39-1.41,0s-.39,1.02,0,1.41l2,2c.2,.2,.45,.29,.71,.29s.51-.1,.71-.29Zm14,14c.39-.39,.39-1.02,0-1.41l-2-2c-.39-.39-1.02-.39-1.41,0s-.39,1.02,0,1.41l2,2c.2,.2,.45,.29,.71,.29s.51-.1,.71-.29Zm-16,0l2-2c.39-.39,.39-1.02,0-1.41s-1.02-.39-1.41,0l-2,2c-.39,.39-.39,1.02,0,1.41,.2,.2,.45,.29,.71,.29s.51-.1,.71-.29ZM18.71,6.71l2-2c.39-.39,.39-1.02,0-1.41s-1.02-.39-1.41,0l-2,2c-.39,.39-.39,1.02,0,1.41,.2,.2,.45,.29,.71,.29s.51-.1,.71-.29Z" />
+            </svg>
+         </div>
+         <i class="indicator"></i>
+         <div class="icon sun-icon">
+            <!-- Inline SVG for sun -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+               <path
+                  d="M15,24a12.021,12.021,0,0,1-8.914-3.966,11.9,11.9,0,0,1-3.02-9.309A12.122,12.122,0,0,1,13.085.152a13.061,13.061,0,0,1,5.031.205,2.5,2.5,0,0,1,1.108,4.226c-4.56,4.166-4.164,10.644.807,14.41a2.5,2.5,0,0,1-.7,4.32A13.894,13.894,0,0,1,15,24Zm.076-22a10.793,10.793,0,0,0-1.677.127,10.093,10.093,0,0,0-8.344,8.8A9.927,9.927,0,0,0,7.572,18.7,10.476,10.476,0,0,0,18.664,21.43a.5.5,0,0,0,.139-.857c-5.929-4.478-6.4-12.486-.948-17.449a.459.459,0,0,0,.128-.466.49.49,0,0,0-.356-.361A10.657,10.657,0,0,0,15.076,2Z" />
+            </svg>
+         </div>
+      </div>
+   </header>
+
+   <!-- HOMEPAGE SECTION -->
+   <main class="profile">
+      <section id="home" class="main-container">
+         <div class="first-row">
+            <img src="img/portrait.jpg" class="profile_portrait" alt="Doug Hill Portrait">
+            <div class="text-content">
+               <h1 class="introduction_header">Greetings!</h1>
+               <p class="introduction">
+                  <br>I am <span class="bold-span">Daniel Hill,</span> a
+                  <span class="bold-span">journalist, writer, and editor</span> <br>
+                  from <span class="bold-span">Madison, Wisconsin</span> with a passion for <span
+                     class="bold-span">videography</span> and visual storytelling.<br>
+                  <br>
+                  My experience spans across <span class="bold-span">writing, editing,</span> and <span
+                     class="bold-span">video production,</span> where I strive to bring stories to life with creativity
+                  and impact.<br>
+                  I’m driven by <span class="bold-span">curiosity,</span> a strong work ethic, and a commitment to <span
+                     class="bold-span">lifelong learning.</span><br>
+                  <br>
+                  Whether behind the camera or crafting narratives, I am excited to apply my skills and passion to new
+                  opportunities in <span class="bold-span">journalism and videography.</span>
+
+                  <br><br>
+               </p>
+            </div>
+         </div>
+         <div class="second-row">
+            <div class="madison-picture">
+               <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="155.842mm" height="34.5511mm"
+                  version="1.1"
+                  style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                  viewBox="0 0 16683.7 3698.87" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <defs>
+                     <style type="text/css">
+
+                     </style>
+                  </defs>
+                  <title id="title">Madison Skyline Image</title>
+                  <desc id="desc">Silouhette of the Madison, Wisconsin skyline</desc>
+                  <g id="Layer_x0020_1">
+                     <metadata id="CorelCorpID_0Corel-Layer" />
+                     <path class="skyline"
+                        d="M13470.61 1279.21l0 -114.53 -556.43 0 0 -127.48 -257.92 0 0 127.48 -332.61 0 0 114.53 -192.93 0 0 1535.53 -149.92 0 0 74.3 -20.95 5.86 0 -1314.89 -116.82 0 0 -144.31 -407.87 0 0 -299.72 -34.14 0 0 299.72 -58.81 0 0 144.31 -1018.07 0 0 1234.17 -218.71 0 0 -1329.89 -667.19 0 0 -175.14 -500.81 0 0 175.14 -121.41 0 0 57.83 -397.56 0 0 73.15 -361.46 0 0 1079.52 -137.58 0 0 -679.15 -1044.41 0 0 -154.46 -266.39 0 0 154.46 -277.23 0 0 425.39 -41.61 0 0 29.1 -50.41 0 0 -118.15 -49.18 0 0 -98.07 -184.02 0c0,0 -1.36,-61.24 -43.94,-80.24 0,-61.81 0,-403.32 0,-403.32 0,0 43.94,-40.85 36.37,-106.24 -7.56,-65.38 -100.61,-108.73 -100.61,-108.73 0,0 28.68,-31.65 12.43,-43.94 -16.26,-12.29 -74.75,-38.64 -60.12,-98.33 14.62,-59.67 48.98,-119.38 -2.32,-175.57 -51.28,-56.2 -51.28,-80.75 -51.28,-80.75 0,0 -35.74,-400.34 -321.7,-577.68 0,-82.19 -63.49,-125.01 -63.49,-125.01l0.11 -141c0,0 -25.46,-85.52 -69.61,-108.38l1.42 0c0,-12.44 -9.16,-22.66 -21.12,-24.48l9.92 0c0,0 -3.2,-7.01 -2.15,-13.25 1.04,-6.25 -0.56,-26.05 2.15,-29.87 2.69,-3.81 7.2,-22.9 7.2,-25.33 0,-2.45 3.47,-11.1 2.42,-14.58 -1.04,-3.47 -1.36,-18.75 -1.36,-18.75 0,0 2.75,3.46 3.09,6.25 0.35,2.76 6.61,22.2 6.61,23.59 0,1.39 10.06,4.53 9.71,0.35 -0.33,-4.18 -3.8,-6.61 -3.8,-6.61 0,0 -4.87,-22.56 -6.59,-23.59 -1.76,-1.06 -8,-20.83 -8,-20.83 0,0 -4.68,-2.43 -9.28,-2.43 -4.59,0 -5.63,-2.76 -4.59,-5.89 1.05,-3.14 5.37,-11.12 4.59,-12.85 -0.77,-1.76 -4.23,-11.81 -7.01,-12.16 -2.79,-0.34 -6.26,-1.04 -9.04,3.12 -2.78,4.19 -2.78,2.44 -3.12,9.05l-31.72 -29.92c0.11,-0.41 0.26,-0.81 0.26,-1.25 0,-2.93 -2.37,-5.3 -5.29,-5.3 -2.95,0 -5.3,2.37 -5.3,5.3 0,2.93 2.34,5.3 5.3,5.3l17.51 12.59c0.18,0.69 0.26,1.5 -0.2,2.52 -1.39,3.13 -7.98,17.71 -6.24,20.48 1.71,2.78 17.56,13.89 17.56,13.89 0,0 0.14,21.86 -2.99,25 -3.13,3.13 -4.51,12.49 -1.73,15.96 2.75,3.47 5.59,5.9 4.72,12.15 -0.91,6.26 0,35.77 0,35.77l-2.3 6.95 12.85 11.79 2.09 6.25 -4.51 3.82 -1.41 2.49 3.15 0c-11.93,1.82 -21.09,12.04 -21.09,24.48l3.92 0c-46.26,22.87 -73.34,108.38 -73.34,108.38l0.12 141c0,0 -63.48,61.91 -63.48,125.01 -285.97,177.34 -321.7,577.68 -321.7,577.68 0,0 0,24.55 -51.31,80.75 -51.29,56.19 -16.93,115.9 -2.32,175.57 14.65,59.69 -43.84,86.04 -60.11,98.33 -16.23,12.29 12.47,43.94 12.47,43.94 0,0 -93.08,43.35 -100.62,108.73 -7.57,65.39 36.31,106.24 36.31,106.24 0,0 0,341.51 0,403.32 -42.52,19 -43.88,80.24 -43.88,80.24l-184.04 0 0 98.07 -49.17 0 0 118.15 -50.43 0 0 -29.1 -13.07 0 0 -994.79 -31.46 -3.79 0 -140.38 -32.22 0 0 -75.88 -229.57 0 0 -189.71 -205.28 0 0 -53.11 -64.08 0 0 45.53 -407.88 0 0 87.26 -32.25 0 0 60.71 -68.29 94.84 0 106.24 -40.78 34.14 0 106.24 -61.66 41.73 0 132.79 70.19 18.98 0 136.57 53.12 0 0 1356.06 -47.32 0 0 -1073.52 -33.3 0 0 -93 -712.15 0 -181.99 50.73 0 1115.78 -20.18 0 0 -51.23 -55.78 1.37 0 -947.93 -512.19 0 0 -125.2 -216.26 -49.32 0 56.92 0 102.33 -68.29 0 0 32.15 -37.94 0 -41.73 32.45 -197.29 0 0 -64.6 -91.06 0 0 32.15 -164.4 45.21 0 819.97 -185.79 0c0,0 0,0 0,136.59 -106.23,15.17 -220.05,91.05 -220.05,91.05l0 273.34 0.4 2.44 -0.4 0.03 0 0.75 -497.13 34.53 0 71.4 3282.88 0 194.49 0 133.57 0 0 -656.95 269.19 0 0 -157.46 756.78 0 0 -157.46 477.43 0 0 157.46 223.47 0 0 -111.73 105.29 0 0 -43.79 -85.48 0 0 -34.15 381.75 0 0 34.15 -85.47 0 0 43.79 151.2 0 0 76.35 91.6 0 0 64.82 378.69 0 0 -64.82 81.35 0 0 64.82 392.01 0 0 -64.82 91.71 0 0 64.82 412.72 0 0 -64.82 97.62 0 0 64.82 420.17 0 0 -64.82 72.08 0 0 64.82 386.99 0 0 -64.82 64.5 0 0 64.82 360.44 0 0 -64.82 53.11 0 0 64.82 349.05 0 0 -138.36 167.47 0 0 -46.6 -85.48 0 0 -34.15 381.75 0 0 34.15 -85.47 0 0 46.6 198.44 0 0 83.48 690.3 0 0 345.45 186.14 0 0 494.4 79.64 0 268.12 0 9.68 0 4278.31 0 93.01 0 124.64 0 58.31 0 121.55 0 19.52 0 45.97 0 29.4 0 950.38 0 94.89 0 0 -254.27 -94.89 0 0 -141.22 -16.13 -30.9 0 -349.93 9.38 0 -0.4 -12.48 -13.05 0 0 -9.51 -9.85 0 0 -207.19 5.51 -10.36 -16.27 0 0 -49.98 -14.99 -0.18 0 -17.92 4.34 -9.26 -6.56 -88.98 -5.86 -1.45c0,0 -23.97,-105.11 -78.24,-159.36 0,-7.41 -1.01,-17.54 -11.89,-18.03l3.85 0 0 -66.48 32.16 0 0 -9.74 -32.16 0 0 -32.99 -9.78 0 0 32.99 -32.17 0 0 9.74 32.17 0 0 66.48 4.36 0c-10.88,0.49 -11.89,10.62 -11.93,18.03 -54.26,54.26 -78.2,155.12 -78.2,155.12l-5.89 1.43 -6.53 88.98 7.98 10.88 0.69 20.74 -14.62 0 0 49.98 -7.65 0 7.65 10.36 -2.7 207.19 -6.09 0 -0.44 9.51 -8.85 0 0.29 12.48 14.18 0 0 119.73 -127.6 -110.4 -317.84 239.91 -22.76 -0.12 -10.98 -14.23 0 -85.55 4.07 -5.48 -5.45 -4.89 0 -18.07 -13.81 0 -4.09 -6.84 -4.84 6.84 -13.03 0 0 18.07 -5.8 4.89 2.73 5.48 0 85.55 -12.2 12.61 4.87 13.16 0 123.39 -126.81 95.91 -10.98 -13.76 0 -85.56 4.07 -5.48 -5.44 -4.88 0 -18.08 -13.81 0 -4.07 -6.83 -4.89 6.83 -13 0 0 18.08 -5.8 4.88 2.71 5.48 0 85.56 -12.18 12.6 4.86 13.16 0 146.25 -45.97 0 0 -1461.72 -373.27 0 0 -141.67 -250.4 0 0 -210.58 -103.29 0 0 -61.64 -63.58 0 0 61.64 -133.71 0 0 -61.64 -36.64 0 0 61.64 -45.52 0 0 -25.66 -22.67 0 0 25.66 -158.33 0 0 -52.05 -22.67 0 0 52.05 -272.93 0 0 210.58 -341.46 0 0 141.67 -67.43 0 0 -819.85 -200.52 0zm2279.16 2395.95l0 0 -100.84 0 0 -108.1 100.84 0 0 108.1zm0 -121.82l0 0 0 7.44 -100.84 0 0 -7.44c-0.16,-1.73 -0.25,-3.5 -0.25,-5.32 0,-29.22 22.7,-52.9 50.69,-52.9 27.96,0 50.66,23.68 50.66,52.9 0,1.82 -0.09,3.59 -0.27,5.32zm397.7 -364l0 0c9.8,0 17.75,7.76 17.75,17.31 0,0.18 0,0.35 0.1,0.52l0 -30.48c-0.06,-0.58 -0.1,-1.16 -0.1,-1.74 0,-9.56 7.6,-17.31 16.97,-17.31 9.36,0 16.97,7.75 16.97,17.31 0,0.59 -0.03,1.17 -0.1,1.74l0 30.68c0.06,-0.26 0.1,-0.49 0.1,-0.73 0,-9.55 7.95,-17.31 17.75,-17.31 9.81,0 17.77,7.76 17.77,17.31 0,0.59 -0.03,1.18 -0.1,1.74l0 118.68 -104.79 0 0 -118.68c-0.05,-0.57 -0.1,-1.16 -0.1,-1.74 0,-9.55 7.93,-17.31 17.77,-17.31zm-200.46 153.27l0 0 0 224.13 -36.39 0 0 -224.13c-0.07,-0.61 -0.1,-1.22 -0.1,-1.84 0,-10.1 8.18,-18.31 18.3,-18.31 10.1,0 18.3,8.21 18.3,18.31 0,0.62 -0.04,1.23 -0.11,1.84zm307.58 326.13l0 0 -135.69 0 0 -145.48 135.69 0 0 145.48zm0 -163.91l0 0 0 10 -135.69 0 0 -10c-0.22,-2.36 -0.33,-4.72 -0.33,-7.15 0,-39.32 30.52,-71.19 68.18,-71.19 37.65,0 68.19,31.87 68.19,71.19 0,2.43 -0.13,4.8 -0.35,7.15zm177.72 -944.79l0 0c9.65,0 17.45,7.82 17.45,17.44 0,9.65 -7.8,17.44 -17.45,17.44 -9.63,0 -17.43,-7.79 -17.43,-17.44 0,-9.62 7.79,-17.44 17.43,-17.44zm-49.18 32.66l0 0c-3.89,7.88 -12.33,11.66 -18.92,8.43 -6.58,-3.23 -8.76,-12.25 -4.87,-20.13 3.86,-7.89 12.34,-11.67 18.9,-8.43 6.58,3.21 8.76,12.23 4.89,20.13zm67.87 749.91l0 0 0 224.13 -36.42 0 0 -224.13c-0.04,-0.61 -0.09,-1.22 -0.09,-1.84 0,-10.1 8.2,-18.31 18.32,-18.31 10.1,0 18.27,8.21 18.27,18.31 0,0.62 -0.04,1.23 -0.09,1.84zm-34.24 -273.16l0 0c0,-9.56 7.17,-17.32 16.05,-17.32 8.85,0 16.04,7.76 16.04,17.32 0,0.59 -0.05,1.17 -0.1,1.74l0 101.58 -31.92 0 0 -101.58c-0.04,-0.58 -0.06,-1.16 -0.06,-1.74zm36.01 -270.57l0 0 0 67.18 -39.97 0 0 -67.18c-0.06,-0.57 -0.09,-1.15 -0.09,-1.73 0,-9.57 8.98,-17.32 20.09,-17.32 11.09,0 20.07,7.75 20.07,17.32 0,0.59 -0.02,1.17 -0.11,1.73zm49.51 -197.75l0 0c-6.58,3.23 -15.06,-0.55 -18.95,-8.43 -3.86,-7.9 -1.67,-16.91 4.89,-20.13 6.58,-3.24 15.05,0.54 18.92,8.43 3.9,7.88 1.69,16.89 -4.86,20.13zm-1143.03 892.12l0 0 -944.72 0 0 -75.81 944.72 0 0 75.81zm0 -135.9l0 0 -944.72 0 0 -75.82 944.72 0 0 75.82zm0 -135.9l0 0 -944.72 0 0 -75.82 944.72 0 0 75.82zm0 -135.91l0 0 -944.72 0 0 -75.81 944.72 0 0 75.81zm-2899.59 204.76l0 0 -53.15 53.1 -158.36 0 -56.57 -53.1 268.08 0zm-393.48 0l0 0 -53.13 53.1 -158.36 0 -56.58 -53.1 268.07 0zm-393.48 0l0 0 -53.14 53.1 -158.32 0 -56.6 -53.1 268.07 0zm-393.47 0l0 0 -53.15 53.1 -158.32 0 -56.6 -53.1 268.08 0zm1395.83 390.3l0 0 -1684.23 0 0 -220.05 1684.23 0 0 220.05zm0 -337.2l0 0 -67.98 0 -45.2 -53.1 113.18 0 0 53.1zm628.44 337.2l0 0 -581.59 0 0 -53.11 581.59 0 0 53.11zm514.86 -86.31l0 0 -1096.45 -51.23 0 -82.52 1096.45 59.76 0 73.99zm0 -170.25l0 0 -1096.45 -51.23 0 -82.52 1096.45 59.75 0 74zm-10820.29 -1296.49l0 0 48.36 0 0 50.85 -48.36 0 0 -50.85zm-199.44 0l0 0 48.35 0 0 50.85 -48.35 0 0 -50.85zm-199.44 0l0 0 48.36 0 0 50.85 -48.36 0 0 -50.85zm48.36 791.69l0 0 -48.36 0 0 -50.85 48.36 0 0 50.85zm0 -139.4l0 0 -48.36 0 0 -384.16 48.36 0 0 384.16zm72.86 139.4l0 0 -48.36 0 0 -50.85 48.36 0 0 50.85zm0 -139.4l0 0 -48.36 0 0 -384.16 48.36 0 0 384.16zm0 -438.74l0 0 -121.22 0 0 -87.69 121.22 0 0 87.69zm0 -162.7l0 0 -48.36 0 0 -50.85 48.36 0 0 50.85zm126.57 740.84l0 0 -48.35 0 0 -50.85 48.35 0 0 50.85zm0 -139.4l0 0 -48.35 0 0 -384.16 48.35 0 0 384.16zm72.86 139.4l0 0 -48.35 0 0 -50.85 48.35 0 0 50.85zm0 -139.4l0 0 -48.35 0 0 -384.16 48.35 0 0 384.16zm0 -438.74l0 0 -121.21 0 0 -87.69 121.21 0 0 87.69zm0 -162.7l0 0 -48.35 0 0 -50.85 48.35 0 0 50.85zm126.59 740.84l0 0 -48.36 0 0 -50.85 48.36 0 0 50.85zm0 -139.4l0 0 -48.36 0 0 -384.16 48.36 0 0 384.16zm72.85 139.4l0 0 -48.35 0 0 -50.85 48.35 0 0 50.85zm0 -139.4l0 0 -48.35 0 0 -384.16 48.35 0 0 384.16zm0 -438.74l0 0 -121.21 0 0 -87.69 121.21 0 0 87.69zm0 -162.7l0 0 -48.35 0 0 -50.85 48.35 0 0 50.85zm3138.09 1364.3l0 -241.48c0,0 28.88,-217.11 -194.99,-217.11 -223.88,0 -209.45,191.83 -209.45,191.83l0 266.76 404.44 0zm-895.33 36.64c-128.25,0 -128.15,92.82 -128.15,92.82l247.45 0c0,0 0.74,-92.82 -119.3,-92.82zm-933.4 0c-128.24,0 -128.13,92.82 -128.13,92.82l247.44 0c0,0 0.75,-92.82 -119.3,-92.82zm-311.12 0c-128.25,0 -128.15,92.82 -128.15,92.82l247.44 0c0,0 0.75,-92.82 -119.29,-92.82zm3100.04 -36.64l0 -241.48c0,0 28.9,-217.11 -194.99,-217.11 -223.87,0 -209.43,191.83 -209.43,191.83l0 266.76 404.42 0zm-2166.65 36.64c-128.25,0 -128.13,92.82 -128.13,92.82l247.44 0c0,0 0.75,-92.82 -119.3,-92.82zm-1244.53 0c-128.25,0 -128.13,92.82 -128.13,92.82l247.44 0c0,0 0.75,-92.82 -119.3,-92.82zm933.39 0c-128.25,0 -128.13,92.82 -128.13,92.82l247.44 0c0,0 0.75,-92.82 -119.3,-92.82zm4398.15 -36.64l0 -241.48c0,0 28.89,-217.11 -194.99,-217.11 -223.88,0 -209.44,191.83 -209.44,191.83l0 266.76 404.43 0zm-1155.16 -458.59c-223.88,0 -209.46,191.83 -209.46,191.83l0 266.76 404.42 0 0 -241.48c0,0 28.92,-217.11 -194.96,-217.11zm-1440.28 0c-223.88,0 -209.44,191.83 -209.44,191.83l0 266.77 404.43 0 0 -241.49c0,0 28.88,-217.11 -194.99,-217.11zm1155.16 458.59l0 -241.48c0,0 28.89,-217.11 -194.99,-217.11 -223.88,0 -209.44,191.82 -209.44,191.82l0 266.77 404.43 0zm2573.58 36.64c-128.25,0 -128.13,92.82 -128.13,92.82l247.44 0c0,0 0.74,-92.82 -119.3,-92.82zm-311.13 0c-128.25,0 -128.13,92.82 -128.13,92.82l247.44 0c0,0 0.75,-92.82 -119.3,-92.82zm-1302.26 -36.64l0 -241.47c0,0 28.89,-217.12 -194.99,-217.12 -223.9,0 -209.44,191.84 -209.44,191.84l0 266.75 404.43 0zm991.14 36.64c-128.25,0 -128.15,92.82 -128.15,92.82l247.44 0c0,0 0.75,-92.82 -119.29,-92.82zm-7833.41 -402.89l0 -45.99 -22.5 0 0 -15.61 143.43 0 0 61.6 0 0 -120.93 0zm-438.22 -36.91l-27.03 0 0 -24.69 75.48 0 0 24.69 0 0 -48.45 0zm48.45 -74.44l0 0 -253.52 0 0 -61.6 253.52 0 0 61.6zm0 -111.36l0 0 -253.52 0 0 -61.6 253.52 0 0 61.6zm0 -111.35l0 0 -253.52 0 0 -61.6 253.52 0 0 61.6zm0 -111.36l0 0 -253.52 0 0 -61.6 253.52 0 0 61.6zm0 -111.35l0 0 -253.52 0 0 -61.6 253.52 0 0 61.6zm0 -111.36l0 0 -253.52 0 0 -61.6 253.52 0 0 61.6zm0 -111.35l0 0 -253.52 0 0 -61.6 253.52 0 0 61.6zm620.78 668.12l0 0 -253.52 0 0 -61.6 253.52 0 0 61.6zm0 -111.36l0 0 -253.52 0 0 -61.6 253.52 0 0 61.6zm0 -111.35l0 0 -253.52 0 0 -61.6 253.52 0 0 61.6zm0 -111.36l0 0 -253.52 0 0 -61.6 253.52 0 0 61.6zm0 -111.35l0 0 -253.52 0 0 -61.6 253.52 0 0 61.6zm0 -111.36l0 0 -253.52 0 0 -61.6 253.52 0 0 61.6zm0 -111.35l0 0 -253.52 0 0 -61.6 253.52 0 0 61.6zm0 -99.52l0 0 -253.52 0 0 -61.6 253.52 0 0 61.6zm1277.64 992.83l0 0 -56.58 53.1 -158.35 0 -53.14 -53.1 268.07 0zm-393.47 0l0 0 -56.59 53.1 -158.33 0 -53.14 -53.1 268.07 0zm-393.47 0l0 0 -56.59 53.1 -158.35 0 -53.13 -53.1 268.07 0zm-393.48 0l0 0 -56.59 53.1 -158.33 0 -53.14 -53.1 268.07 0zm-483.47 0l0 0 113.18 0 -45.2 53.1 -67.98 0 0 -53.1zm-46.79 390.3l0 0 -581.44 0 0 -53.11 581.44 0 0 53.11zm0 -137.53l0 0 -1096.3 51.23 0 -73.99 1096.3 -59.76 0 82.52zm0 -170.25l0 0 -1096.3 51.23 0 -74 1096.3 -59.75 0 82.52zm1731.03 132.87l0 0 -758.89 0 0 174.92 -48.39 0 0 -174.92 -608.89 0 0 174.92 -52.66 0 0 -174.92 -215.41 0 0 -45.13 1684.23 0 0 45.13zm205.42 -2150.37l0 0 46.26 0 0 68.9 -46.26 0 0 -68.9zm0 153.24l0 0 46.26 0 0 68.9 -46.26 0 0 -68.9zm46.26 1199.42l0 0 -46.26 0 0 -577.04 46.26 0 0 577.04zm0 -670.04l0 0 -46.26 0 0 -219.44 46.26 0 0 219.44zm0 -307.25l0 0 -35.88 0 -10.37 0 0 -68.91 10.37 0 35.88 0 76.8 0 0 68.91 -76.8 0zm87.16 977.28l0 0 -46.26 0 0 -577.04 46.26 0 0 577.04zm0 -670.04l0 0 -46.26 0 0 -219.44 46.26 0 0 219.44zm0 -460.49l0 0 -46.26 0 0 -68.9 46.26 0 0 68.9zm0 -153.24l0 0 -46.26 0 0 -68.9 46.26 0 0 68.9zm130.65 1283.76l0 0 -46.27 0 0 -577.04 46.27 0 0 577.04zm0 -670.04l0 0 -46.27 0 0 -219.44 46.27 0 0 219.44zm0 -307.25l0 0 -46.27 0 0 -68.91 46.27 0 0 68.91zm0 -153.24l0 0 -46.27 0 0 -68.9 46.27 0 0 68.9zm0 -153.24l0 0 -46.27 0 0 -68.9 46.27 0 0 68.9zm95.21 1283.76l0 0 -46.27 0 0 -577.04 46.27 0 0 577.04zm0 -670.04l0 0 -46.27 0 0 -219.44 46.27 0 0 219.44zm0 -307.25l0 0 -46.27 0 0 -68.91 46.27 0 0 68.91zm0 -153.24l0 0 -46.27 0 0 -68.9 46.27 0 0 68.9zm0 -153.24l0 0 -46.27 0 0 -68.9 46.27 0 0 68.9zm95.2 1283.76l0 0 -46.26 0 0 -577.04 46.26 0 0 577.04zm0 -670.04l0 0 -46.26 0 0 -219.44 46.26 0 0 219.44zm0 -307.25l0 0 -46.26 0 0 -68.91 46.26 0 0 68.91zm0 -153.24l0 0 -46.26 0 0 -68.9 46.26 0 0 68.9zm0 -153.24l0 0 -46.26 0 0 -68.9 46.26 0 0 68.9zm94.23 -68.9l0 0 46.26 0 0 68.9 -46.26 0 0 -68.9zm0 153.24l0 0 46.26 0 0 68.9 -46.26 0 0 -68.9zm46.26 1199.42l0 0 -46.26 0 0 -577.04 46.26 0 0 577.04zm0 -670.04l0 0 -46.26 0 0 -219.44 46.26 0 0 219.44zm87.18 670.04l0 0 -46.26 0 0 -577.04 46.26 0 0 577.04zm0 -670.04l0 0 -46.26 0 0 -219.44 46.26 0 0 219.44zm0 -307.25l0 0 -30.75 0 -15.51 0 -79.56 0 0 -68.91 79.56 0 15.51 0 30.75 0 0 68.91zm0 -153.24l0 0 -46.26 0 0 -68.9 46.26 0 0 68.9zm0 -153.24l0 0 -46.26 0 0 -68.9 46.26 0 0 68.9zm8047.1 1281.31l0 0 -90.27 0 0 -113.34 90.27 0 0 113.34zm0 -236.88l0 0 -90.27 0 0 -67.13 90.27 0 0 67.13zm0 -146.06l0 0 -90.27 0 0 -67.12 90.27 0 0 67.12zm0 -146.04l0 0 -90.27 0 0 -67.12 90.27 0 0 67.12zm0 -146.04l0 0 -90.27 0 0 -67.12 90.27 0 0 67.12zm0 -146.04l0 0 -90.27 0 0 -67.12 90.27 0 0 67.12zm0 -146.04l0 0 -90.27 0 0 -67.12 90.27 0 0 67.12zm0 -150.82l0 0 -90.27 0 0 -268.15 90.27 0 0 268.15zm418.85 1221.52l0 0 -282.26 0 0 -220.84 282.26 0 0 220.84zm0 -343.87l0 0 -282.26 0 0 -65.99 282.26 0 0 65.99zm0 -145.48l0 0 -282.26 0 0 -66 282.26 0 0 66zm0 -145.49l0 0 -282.26 0 0 -65.99 282.26 0 0 65.99zm0 -145.48l0 0 -282.26 0 0 -65.99 282.26 0 0 65.99zm0 -145.48l0 0 -282.26 0 0 -65.99 282.26 0 0 65.99zm0 -145.48l0 0 -282.26 0 0 -65.99 282.26 0 0 65.99zm0 -149l0 0 -282.26 0 0 -220.85 282.26 0 0 220.85zm359.19 1220.27l0 0 -282.25 0 0 -220.84 282.25 0 0 220.84zm0 -343.87l0 0 -282.25 0 0 -65.99 282.25 0 0 65.99zm0 -145.48l0 0 -282.25 0 0 -66 282.25 0 0 66zm0 -145.49l0 0 -282.25 0 0 -65.99 282.25 0 0 65.99zm0 -145.48l0 0 -282.25 0 0 -65.99 282.25 0 0 65.99zm0 -145.48l0 0 -282.25 0 0 -65.99 282.25 0 0 65.99zm0 -145.48l0 0 -282.25 0 0 -65.99 282.25 0 0 65.99zm0 -149l0 0 -282.25 0 0 -220.85 282.25 0 0 220.85zm359.19 1220.27l0 0 -282.24 0 0 -220.84 282.24 0 0 220.84zm0 -343.87l0 0 -282.24 0 0 -65.99 282.24 0 0 65.99zm0 -145.48l0 0 -282.24 0 0 -66 282.24 0 0 66zm0 -145.49l0 0 -282.24 0 0 -65.99 282.24 0 0 65.99zm0 -145.48l0 0 -282.24 0 0 -65.99 282.24 0 0 65.99zm0 -145.48l0 0 -282.24 0 0 -65.99 282.24 0 0 65.99zm0 -145.48l0 0 -282.24 0 0 -65.99 282.24 0 0 65.99zm0 -149l0 0 -282.24 0 0 -220.85 282.24 0 0 220.85zm172.82 1116.68l0 0 -90.28 0 0 -113.34 90.28 0 0 113.34zm0 -236.88l0 0 -90.28 0 0 -67.13 90.28 0 0 67.13zm0 -146.06l0 0 -90.28 0 0 -67.12 90.28 0 0 67.12zm0 -146.04l0 0 -90.28 0 0 -67.12 90.28 0 0 67.12zm0 -146.04l0 0 -90.28 0 0 -67.12 90.28 0 0 67.12zm0 -146.04l0 0 -90.28 0 0 -67.12 90.28 0 0 67.12zm0 -146.04l0 0 -90.28 0 0 -67.12 90.28 0 0 67.12zm0 -150.82l0 0 -90.28 0 0 -268.15 90.28 0 0 268.15z" />
+                  </g>
+               </svg>
+            </div>
+         </div>
+         <p class="Schumann_Quote">"There is no end to learning..." - Robert Schumann</p>
+         <div class="third-row">
+            <button type="button" class="nav_button" onclick="window.location.href='#about';">About Me</button>
+            <button type="button" class="nav_button" onclick="window.location.href='#work';">My Projects</button>
+            <button type="button" class="nav_button" onclick="window.location.href='#contact';">Contact me</button>
+            <a href="files/Doug_Hill_Resume.pdf" target="_blank">
+               <button type="button" class="nav_button">Resume</button>
+            </a>
+         </div>
+         <br><br>
+      </section>
+
+      <!-- ABOUT SECTION -->
+      <section id="about" class="about-container">
+         <div class="about">
+            <h1>About Me</h1>
+            <div class="journey">
+
+               <div class="journey-card">
+                  <h3>Early Personal Development</h3>
+                  <div class="journey-section left-text">
+                     <div class="journey-images">
+                        <img src="img/daniel_portrait.jpg" alt="Journalism and Writing" class="journey-img">
+                     </div>
+
+                     <p>Growing up in Wisconsin, I developed a deep passion for <span class="bold-span">writing,
+                           storytelling, and visual media</span> at an early age. I found myself drawn to the way
+                        stories
+                        could be conveyed through both words and visuals. My love for <span
+                           class="bold-span">videography</span> began with capturing moments on my first camera and
+                        evolved
+                        into a keen interest in filmmaking and video production.<br><br>
+
+                        Throughout my school years, I honed my skills in writing and video editing, blending creativity
+                        with technical expertise. I also nurtured my passion for journalism, always seeking out new ways
+                        to
+                        inform, engage, and entertain through the power of narrative. These early experiences shaped the
+                        foundation of my career today.<br><br>
+
+                        I am described by my peers as <span class="bold-span">creative, dedicated, and
+                           collaborative.</span> I dive deep into the subjects that fascinate me, constantly pushing
+                        myself
+                        to learn more and improve my craft. While I thrive on solo projects, I also find fulfillment in
+                        working within a team, believing that great stories are built through collaboration and mutual
+                        respect.
+                     </p>
+                  </div>
+               </div>
+
+               <div class="journey-card">
+                  <h3>Journalism and Writing</h3>
+                  <div class="journey-section right-text">
+                     <p>After earning my bachelor's degree in journalism from the University of Wisconsin, Madison, I
+                        began
+                        building a career in <span class="bold-span">writing, editing, and storytelling.</span> Whether
+                        reporting on local events or crafting in-depth feature pieces, my goal is always to create
+                        impactful stories that resonate with audiences.<br><br>
+
+                        As a writer and journalist, I’ve developed a versatile skill set, ranging from conducting
+                        interviews and researching complex topics to writing clear and engaging content for a variety of
+                        platforms. I’m passionate about <span class="bold-span">bringing stories to life</span> and
+                        using
+                        journalism as a tool for <span class="bold-span">positive change.</span>
+                     </p>
+                     <div class="journey-images">
+                        <img src="img/journalism.jpg" alt="Journalism and Writing" class="journey-img">
+                     </div>
+                  </div>
+               </div>
+
+               <div class="journey-card">
+                  <h3>Videography and Visual Storytelling</h3>
+                  <div class="journey-section left-text">
+                     <p>My passion for <span class="bold-span">videography</span> has driven me to explore the art of
+                        visual storytelling. From conceptualizing ideas to handling all aspects of video production, I
+                        aim
+                        to create compelling and visually captivating content. I love the process of transforming ideas
+                        into visuals that communicate emotion and meaning.<br><br>
+
+                        I’ve worked on a wide range of projects, including short documentaries, event videos, and
+                        promotional content. Each project challenges me to find innovative ways to tell stories through
+                        the
+                        lens, using a mix of technical skills and creativity.
+                     </p>
+                     <div class="journey-images">
+                        <img src="img/videography.jpg" alt="Videography and Storytelling" class="journey-img">
+                     </div>
+                  </div>
+               </div>
+
+               <div class="journey-card">
+                  <h3>Other Interests and Future Goals</h3>
+                  <div class="journey-section right-text">
+                     <p>Outside of journalism and videography, I enjoy exploring the world through travel and new
+                        experiences. My future goals include working abroad, where I can combine my passion for <span
+                           class="bold-span">storytelling</span> with my desire to <span class="bold-span">document
+                           diverse
+                           cultures and perspectives.</span><br><br>
+
+                        I’m excited to continue growing as a <span class="bold-span">journalist and visual
+                           storyteller,</span> always pushing myself to create content that informs, inspires, and
+                        engages.
+                     </p>
+                     <div class="journey-images">
+                        <img src="img/travel.jpg" alt="Travel and Exploration" class="journey-img">
+                     </div>
+                  </div>
+               </div>
+
+            </div>
+         </div>
+         <br><br>
+      </section>
+
+
+
+      <!-- SKILLS SECTION -->
+      <section id="skills" class="skills-container"></section>
+      <div class="skills">
+         <h1>Journalism and Videography Skills</h1>
+         <ol class="tech-stack">
+            <li>Writing and Editing
+               <ul>
+                  <li>Article Writing: Feature stories, news reports, editorials</li>
+                  <li>Editing: Proofreading, fact-checking, content revisions</li>
+                  <li>Copywriting: SEO-friendly content creation</li>
+                  <li>Research: In-depth investigations, source interviews</li>
+               </ul>
+            </li>
+            <li>Videography and Production
+               <ul>
+                  <li>Video Editing Software: Adobe Premiere Pro, Final Cut Pro</li>
+                  <li>Camera Operation: DSLR, mirrorless, and camcorders</li>
+                  <li>Lighting: Basic lighting setups for interviews and shoots</li>
+                  <li>Audio: Field recording, microphone setup, sound mixing</li>
+               </ul>
+            </li>
+            <li>Digital Media and Storytelling
+               <ul>
+                  <li>Multimedia Storytelling: Combining video, text, and graphics</li>
+                  <li>Scriptwriting: Developing video scripts and storyboards</li>
+                  <li>Content Strategy: Planning and producing engaging content</li>
+                  <li>Social Media Content: Crafting stories for platforms like YouTube, Instagram, and TikTok</li>
+               </ul>
+            </li>
+            <li>Interviewing and Communication
+               <ul>
+                  <li>Interview Techniques: Conducting in-depth interviews</li>
+                  <li>Public Speaking: Presenting content on video or live streams</li>
+                  <li>Communication Skills: Clear and effective reporting</li>
+                  <li>Story Development: Identifying and developing newsworthy stories</li>
+               </ul>
+            </li>
+            <li>Technical Tools
+               <ul>
+                  <li>Content Management Systems (CMS): WordPress, Squarespace</li>
+                  <li>Photo Editing: Adobe Photoshop, Lightroom</li>
+                  <li>Data Visualization: Using tools to present information clearly</li>
+               </ul>
+            </li>
+            <li>Project Management and Collaboration
+               <ul>
+                  <li>Collaboration Tools: Slack, Trello, Google Workspace</li>
+                  <li>Project Management: Managing deadlines and creative workflows</li>
+                  <li>Teamwork: Working in teams for video production and editorial work</li>
+               </ul>
+            </li>
+         </ol>
+      </div>
+      <br><br>
+      </section>
+
+
+      <!-- WORK SECTION -->
+      <section id="work" class="work">
+         <h1>Projects</h1>
+         <div class="project-list">
+            <!-- PROJECT LIST GRID, ALTERNATING TEXT BLOCKS AND IMAGES-->
+            <div class="project-list__item">
+               <h2>Dr. Evermor and the Forevertron</h2>
+               <img src="img/forevertron.jpg" alt="Screenshot from Dr. Evermor's Forevertron video"
+                  class="project-image">
+               <p>
+                  Videography/Documentary/Editing
+                  <br><br>
+                  This documentary project covers the life and work of artist Dr. Evermor, focusing on his world-famous
+                  Forevertron sculpture and a variety of his other metal sculptures.
+                  The video explores Dr. Evermor's creative process and the significance of his work, blending
+                  interviews, live footage, and narrated segments to tell a compelling visual story.
+               </p>
+               <div class="project-button-container">
+                  <a href="forevertron-video-details.html">
+                     <button type="button" class="nav_button project_link">Project Details</button>
+                  </a>
+                  <a href="https://example.com/forevertron-video" target="_blank">
+                     <button type="button" class="nav_button project_link">Watch Video</button>
+                  </a>
+               </div>
+            </div>
+
+            <div class="project-list__item">
+               <h2>Community News Feature</h2>
+               <img src="img/community-news.jpg" alt="Screenshot of Community News Feature" class="project-image">
+               <p>
+                  Journalism/Interviewing/Editing
+                  <br><br>
+                  A short news feature highlighting local events in Madison, WI, covering a community arts festival.
+                  This project involved interviewing local artists and attendees, capturing the atmosphere, and editing
+                  the footage into a concise news segment.
+               </p>
+               <div class="project-button-container">
+                  <a href="community-news-details.html">
+                     <button type="button" class="nav_button project_link">Project Details</button>
+                  </a>
+                  <a href="https://example.com/community-news" target="_blank">
+                     <button type="button" class="nav_button project_link">Watch Video</button>
+                  </a>
+               </div>
+            </div>
+
+            <div class="project-list__item">
+               <h2>Travel Documentary: Exploring the Midwest</h2>
+               <img src="img/midwest-travel.jpg" alt="Screenshot of Midwest Travel Documentary" class="project-image">
+               <p>
+                  Videography/Documentary/Storytelling
+                  <br><br>
+                  A travel documentary series exploring various hidden gems throughout the Midwest. The project blends
+                  videography and narration to provide viewers with an inside look into some of the most fascinating but
+                  lesser-known locations in the region.
+               </p>
+               <div class="project-button-container">
+                  <a href="midwest-travel-details.html">
+                     <button type="button" class="nav_button project_link">Project Details</button>
+                  </a>
+                  <a href="https://example.com/midwest-travel" target="_blank">
+                     <button type="button" class="nav_button project_link">Watch Video</button>
+                  </a>
+               </div>
+            </div>
+
+            <div class="project-list__item">
+               <h2>Documentary on Local Artists</h2>
+               <img src="img/local-artists.jpg" alt="Screenshot from Local Artists Documentary" class="project-image">
+               <p>
+                  Videography/Editing/Interviewing
+                  <br><br>
+                  This video project focuses on several local artists and their creative processes. The documentary
+                  includes interviews and behind-the-scenes footage from studios and workshops, offering a deep dive
+                  into the art community.
+               </p>
+               <div class="project-button-container">
+                  <a href="local-artists-details.html">
+                     <button type="button" class="nav_button project_link">Project Details</button>
+                  </a>
+                  <a href="https://example.com/local-artists" target="_blank">
+                     <button type="button" class="nav_button project_link">Watch Video</button>
+                  </a>
+               </div>
+            </div>
+
+            <div class="project-list__item">
+               <h2>Promotional Video for Local Business</h2>
+               <img src="img/business-promo.jpg" alt="Screenshot of Business Promotional Video" class="project-image">
+               <p>
+                  Videography/Marketing/Editing
+                  <br><br>
+                  A promotional video created for a local business, showcasing their services and community impact. This
+                  project highlights effective video marketing techniques and storytelling to engage potential
+                  customers.
+               </p>
+               <div class="project-button-container">
+                  <a href="business-promo-details.html">
+                     <button type="button" class="nav_button project_link">Project Details</button>
+                  </a>
+                  <a href="https://example.com/business-promo" target="_blank">
+                     <button type="button" class="nav_button project_link">Watch Video</button>
+                  </a>
+               </div>
+            </div>
+
+            <div class="project-list__item">
+               <h2>Short Film: A Day in the Life</h2>
+               <img src="img/short-film.jpg" alt="Screenshot of Short Film" class="project-image">
+               <p>
+                  Short Film/Directing/Editing
+                  <br><br>
+                  A creative short film capturing a day in the life of a character navigating the everyday challenges of
+                  city living. The film emphasizes narrative storytelling, composition, and editing to create an
+                  emotional and thought-provoking experience.
+               </p>
+               <div class="project-button-container">
+                  <a href="short-film-details.html">
+                     <button type="button" class="nav_button project_link">Project Details</button>
+                  </a>
+                  <a href="https://example.com/short-film" target="_blank">
+                     <button type="button" class="nav_button project_link">Watch Video</button>
+                  </a>
+               </div>
+            </div>
+         </div>
+         <br><br>
+      </section>
+
+
+
+      <!--CONTACT SECTION-->
+      <section id="contact" class="contact_container">
+         <h1>Contact Me!</h1>
+
+         <div>
+            Daniel Hill<br>
+            Madison, WI 53711<br>
+            USA<br>
+            <br>
+            Phone: <a href="tel:+1 608 XXX XXXX" class="contact-link" aria-label="Phone Number">1+ 608 XXX XXXX</a><br>
+            Email: <a href="mailto:stix2you@gmail.com" class="contact-link"
+               aria-label="Email">lambotus@gmail.com</a><br>
+            <br>
+            <br>
+         </div>
+
+         <!--FORM-->
+         <!--Note: HTML5 frontend validation attributes used here: placeholder, required, maxlength-->
+         <form id="submissionForm" action="https://getform.io/f/navvpnea" method="POST">
+            <label class="standard-label" for="contact-email">Email: </label>
+            <input type="email" name="email" placeholder="Your Email" id="contact-email" required>
+
+            <label class="standard-label" for="contact-phone">Telephone: </label>
+            <input type="tel" name="tel" placeholder="Your Phone Number" id="contact-phone" required
+               pattern="\d{3}[\-]\d{3}[\-]\d{4}">
+            <!-- Checkbox for Non-US number, NOTE: id="non-us" is used in script file to toggle removal of "pattern" attribute -->
+            <div style="margin: 10px 0;">
+               <input type="checkbox" id="non-us" name="non-us">
+               <label for="non-us">Non-US Phone Number</label>
+            </div>
+            <label class="standard-label" for="contact-message">Message: </label>
+            <textarea name="message" placeholder="Your Message" id="contact-message" required cols="30"
+               rows="5"></textarea>
+            <button class="form-submit-button nav_button" type="submit">Submit!</button>
+         </form>
+      </section>
+   </main>
+
+   <footer class="page_footer">
+      <p class="footer_text">Find me on</p>
+      <div class="social-media">
+         <!-- LinkedIn link -->
+         <a href="https://www.linkedin.com/in/daniel-hill-687a00329/" class="social-media__link" target="_blank">
+            <img src="img/linkedin_icon.svg" class="social-media__img" alt="linkedin logo">
+         </a>
+         <!-- Instagram placeholder -->
+         <a href="https://www.instagram.com/placeholder" class="social-media__link" target="_blank">
+            <img src="img/instagram_icon.svg" class="social-media__img" alt="instagram logo">
+         </a>
+         <!-- X (formerly Twitter) placeholder -->
+         <a href="https://www.twitter.com/placeholder" class="social-media__link" target="_blank">
+            <img src="img/x_icon.svg" class="social-media__img" alt="x logo">
+         </a>
+         <!-- Reddit placeholder -->
+         <a href="https://www.reddit.com/user/placeholder" class="social-media__link" target="_blank">
+            <img src="img/reddit_icon.svg" class="social-media__img" alt="reddit logo">
+         </a>
+         <!-- Behance placeholder -->
+         <a href="https://www.behance.net/placeholder" class="social-media__link" target="_blank">
+            <img src="img/behance_icon.svg" class="social-media__img" alt="behance logo">
+         </a>
+         <!-- YouTube placeholder -->
+         <a href="https://www.youtube.com/channel/placeholder" class="social-media__link" target="_blank">
+            <img src="img/youtube_icon.svg" class="social-media__img" alt="youtube logo">
+         </a>
+         <!-- Medium placeholder -->
+         <a href="https://medium.com/@placeholder" class="social-media__link" target="_blank">
+            <img src="img/medium_icon.svg" class="social-media__img" alt="medium logo">
+         </a>
+      </div>
+      <br><br><br><br><br><br>
+   </footer>
+
+
+   <!-- Modal HTML -->
+   <div id="thankYouModal">
+      <div>
+         <p>Thank you for your message! I will be in touch soon.</p>
+         <button class="nav_button closeModalButton" onclick="closeModal()">Close</button>
+      </div>
+   </div>
+
+   <!--tota11y accessibility checker
+        <script src="js/tota11y.min.js"></script> -->
+   <script src="js/theme-toggle.js"></script>
+   <script src="js/color-change.js"></script>
+   <script src="js/form-submission.js"></script>
+   <script src="js/active-navbar-link.js"></script>
+
+</body>
+
+</html>

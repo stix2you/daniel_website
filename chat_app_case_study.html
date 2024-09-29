@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Doug Hill Portfolio</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Young+Serif&display=swap">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto:wght@400&display=swap">
+   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+
+   <link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Gloria+Hallelujah&display=swap"
+      rel="stylesheet">
+
+   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+   <link rel="stylesheet" type="text/css" href="css/normalize.css">
+   <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+
+<body>
+
+   <header class="page-header">
+      <!--LOGO UPPER LEFT-->
+      <div onclick="window.location.href='index.html';" class="logo_text">
+         DH<span class="small">_Web_Dev_ ( ) { portfolio site } ;</span>
+      </div>
+
+      <!--MENU BAR-->
+      <nav class="page-header__item special">
+         <ul role="menubar" class="navigation-list">
+            <li role="presentation">
+               <a href="index.html" class="navigation-list__item navigation-list__item--active" role="menuitem"
+                  data-target="home" aria-label="Home Page">Home</a>
+            </li>
+            <li role="presentation">
+               <a href="index.html#about" class="navigation-list__item" role="menuitem" data-target="about"
+                  aria-label="Information about me">About</a>
+            </li>
+            <li role="presentation">
+               <a href="index.html#work" class="navigation-list__item" role="menuitem" data-target="work"
+                  aria-label="List of projects I have completed">Work</a>
+            </li>
+            <li role="presentation">
+               <a href="index.html#contact" class="navigation-list__item" role="menuitem" data-target="contact"
+                  aria-label="How to contact me">Contact</a>
+            </li>
+         </ul>
+      </nav>
+      <!-- LIGHT/DARK THEME TOGGLE BUTTON -->
+
+      <!-- LIGHT/DARK THEME TOGGLE BUTTON -->
+      <div id="toggle" class="theme-toggle active" onclick="toggleTheme()">
+         <div class="icon moon-icon">
+            <!-- Inline SVG for moon -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+               <path
+                  d="M12,17c-2.76,0-5-2.24-5-5s2.24-5,5-5,5,2.24,5,5-2.24,5-5,5Zm0-8c-1.65,0-3,1.35-3,3s1.35,3,3,3,3-1.35,3-3-1.35-3-3-3Zm1-5V1c0-.55-.45-1-1-1s-1,.45-1,1v3c0,.55,.45,1,1,1s1-.45,1-1Zm0,19v-3c0-.55-.45-1-1-1s-1,.45-1,1v3c0,.55,.45,1,1,1s1-.45,1-1ZM5,12c0-.55-.45-1-1-1H1c-.55,0-1,.45-1,1s.45,1,1,1h3c.55,0,1-.45,1-1Zm19,0c0-.55-.45-1-1-1h-3c-.55,0-1,.45-1,1s.45,1,1,1h3c.55,0,1-.45,1-1ZM6.71,6.71c.39-.39,.39-1.02,0-1.41l-2-2c-.39-.39-1.02-.39-1.41,0s-.39,1.02,0,1.41l2,2c.2,.2,.45,.29,.71,.29s.51-.1,.71-.29Zm14,14c.39-.39,.39-1.02,0-1.41l-2-2c-.39-.39-1.02-.39-1.41,0s-.39,1.02,0,1.41l2,2c.2,.2,.45,.29,.71,.29s.51-.1,.71-.29Zm-16,0l2-2c.39-.39,.39-1.02,0-1.41s-1.02-.39-1.41,0l-2,2c-.39,.39-.39,1.02,0,1.41,.2,.2,.45,.29,.71,.29s.51-.1,.71-.29ZM18.71,6.71l2-2c.39-.39,.39-1.02,0-1.41s-1.02-.39-1.41,0l-2,2c-.39,.39-.39,1.02,0,1.41,.2,.2,.45,.29,.71,.29s.51-.1,.71-.29Z" />
+            </svg>
+         </div>
+         <i class="indicator"></i>
+         <div class="icon sun-icon">
+            <!-- Inline SVG for sun -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+               <path
+                  d="M15,24a12.021,12.021,0,0,1-8.914-3.966,11.9,11.9,0,0,1-3.02-9.309A12.122,12.122,0,0,1,13.085.152a13.061,13.061,0,0,1,5.031.205,2.5,2.5,0,0,1,1.108,4.226c-4.56,4.166-4.164,10.644.807,14.41a2.5,2.5,0,0,1-.7,4.32A13.894,13.894,0,0,1,15,24Zm.076-22a10.793,10.793,0,0,0-1.677.127,10.093,10.093,0,0,0-8.344,8.8A9.927,9.927,0,0,0,7.572,18.7,10.476,10.476,0,0,0,18.664,21.43a.5.5,0,0,0,.139-.857c-5.929-4.478-6.4-12.486-.948-17.449a.459.459,0,0,0,.128-.466.49.49,0,0,0-.356-.361A10.657,10.657,0,0,0,15.076,2Z" />
+            </svg>
+         </div>
+      </div>
+   </header>
+
+   <!-- Case-Study Listing-->
+   <main>
+
+      <div class="case-study">
+         <h1>ChatApp Project Case Study</h1>
+         <ol class="case-study-card">
+            <li class="case-study-card-image-left">
+               <img src="img/ChatApp.jpg" class="case-study-image" alt="ChatApp screenshot">
+               <div>
+                  <h2>Overview</h2>
+                  <p>
+                     The ChatApp is a native mobile chat application, built using React Native, Expo, and Google
+                     Firestore.
+                     It features a streamlined chat interface that allows users to easily share messages, images, and
+                     location
+                     data with friends and family. Asynchronous offline storage keeps the app usable while offline, and
+                     a
+                     real-time Firebase/Firestore database on the server side makes for lightning fast and consistent
+                     functionality
+                     while online.
+                  </p>
+               </div>
+            </li>
+            <li class="case-study-card-image-right">
+               <div>
+                  <h2>Purpose & Context</h2>
+                  <p>More and more people use their phones for daily tasks, such as shopping, creating to-do lists,
+                     communicating with friends, scheduling meetings, and more. This app was developed as a portfolio
+                     project
+                     for
+                     the CareerFoundry Full-Stack Web Development course, demonstrating proficiency in building mobile
+                     applications
+                     using React Native, Firebase, Expo, and related technologies. With mobile chat apps among the most
+                     popular
+                     in
+                     the world, creating a fully functional chat app with React Native is an indispensable skill.</p>
+               </div>
+               <img src="img/Popular-chat-screens.jpg" class="case-study-image" alt="Popuare Chat Screens Example">
+            </li>
+            <li>
+               <h2>Objective</h2>
+               <p>The goal of the ChatApp project was to create a feature-rich, responsive chat application for mobile
+                  devices
+                  that enables users to communicate in real-time. Key objectives included:</p>
+               <ul>
+                  <li class="case-study-card_list"><strong>Chat Interface</strong>: Providing a chat interface that
+                     supports seamless message sharing.
+                  </li>
+                  <li class="case-study-card_list"><strong>Images and Location Info</strong>: Allowing users to send
+                     images and location data via the chat.</li>
+                  <li class="case-study-card_list"><strong>Offline Usability</strong>: Ensuring offline access to
+                     previously received messages.</li>
+                  <li class="case-study-card_list"><strong>Accessibility</strong>: Implementing accessibility features
+                     to support screen readers.</li>
+                  <li class="case-study-card_list"><strong>Gifted Chat/Firestore</strong>: Building the app using the
+                     Gifted Chat library and storing data in
+                     Google
+                     Firestore Database.</li><br>
+               </ul>
+            </li>
+            <!-- <li><h2>Key Features</h2>
+               <ul class="case-study-features">
+                  <li class="case-study-card_list"><strong>Start Screen</strong>: A page where users can enter their name and choose a
+                     background
+                     color for the chat screen before joining the chat.</li>
+                  <li class="case-study-card_list"><strong>Chat Interface</strong>: A polished chat interface with an input field and
+                     submit
+                     button.
+                  </li>
+                  <li class="case-study-card_list"><strong>Media Sharing</strong>: Allows users to send images from their device's image
+                     library
+                     or
+                     camera, and share location data.</li>
+                  <li class="case-study-card_list"><strong>Offline Access</strong>: Ensures conversations can be reread offline, preventing
+                     new
+                     message creation while offline.</li>
+               </ul>
+            </li> -->
+            <br>
+
+            <li>
+               <h1>Technology Stack Decisions</h1>
+               <p>Careful scrutiny of the Project Brief led me to some key decisions about technologies to use
+                  for this application. The Project Brief also included specifics on the UI and provided some
+                  assets which we were required to utilize. Here is my rationale for the technologies chosen:
+               </p>
+               <div class="case-study-card-tech-stack-container">
+                  <img src="img/react-native-logo.png" class="case-study-card-tech-stack-container-image"
+                     alt="React Native Logo">
+                  <div class="tech-info">
+                     <h3>React Native</h3>
+                     <p>React Native allows for building cross-platform mobile apps using a single codebase. This
+                        significantly reduces development time and complexity while providing a native look and feel
+                        for both iOS and Android users. The framework also supports third-party libraries and native
+                        components,
+                        ensuring optimal performance.</p>
+                     <h3>Gifted Chat Library</h3>
+                     <p>React Native's Gifted Chat library provides a highly customizable chat UI out-of-the-box,
+                        significantly accelerating
+                        the development process. It supports message bubbles, avatars, media attachments, and various
+                        other features, reducing the need for reinventing the wheel.</p>
+                  </div>
+                  <div class="tech-info">
+                     <h3>Firebase Anonymous Authentication</h3>
+                     <p>Firebase Anonymous Authentication enables user identification without requiring explicit
+                        sign-ups or email verification. This simplifies the onboarding process, allowing users to
+                        immediately access chat rooms while maintaining a layer of user differentiation and security.
+                     </p>
+                     <h3>Firestore Database</h3>
+                     <p>Firestore, a NoSQL cloud database, is ideal for real-time applications. It supports seamless
+                        synchronization across devices, offline data access, and secure data storage for chat
+                        messages and images. Its integration with Firebase Authentication ensures data integrity and
+                        user-specific
+                        access.
+                     </p>
+                  </div>
+                  <img src="img/firebase-logo.jpg" class="case-study-card-tech-stack-container-image"
+                     alt="Firebase Logo">
+                  <img src="img/expo-logo.jpg" class="case-study-card-tech-stack-container-image" alt="Expo Logo">
+                  <div class="tech-info">
+                     <h3>Expo</h3>
+                     <p></p>Expo provides a set of tools and services to facilitate building and testing React Native
+                     apps. Its built-in development environment, managed workflow, and support for third-party plugins
+                     significantly accelerate the development process and simplify deployment across platforms.</p>
+                  </div>
+               </div>
+            </li>
+         </ol>
+         <br>
+         <br>
+         <h1>Development Process</h1>
+         <br>
+         <ul class="case-study-timeline">
+            <li class="case-study-timeline-item">
+               <div class="title">Project Setup</div>
+               <div class="descr">
+                  <div>
+                     Using the Project Brief as a guide, I set up my Chat App project with React Native via Expo,
+                     created
+                     its layout, and styled it.
+                  </div>
+                  <div id="myImg" class="modal-trigger tooltip">
+                     <img src="img/chatapp-start-screen.jpg" class="case-study-timeline-image"
+                        alt="ChatApp Start Screen">
+                     <span class="tooltiptext">Click Image to Expand</span>
+                  </div>
+                  <div><br>I structured the app by creating two key components: Start.js for the
+                     start screen and Chat.js for the chat screen. <br><br>With navigation handled by React Navigation,
+                     I
+                     implemented a form so the user could enter their name, background color customization, and a "start
+                     chatting" button, and then tested the basic functionality on both Android
+                     and iOS. <br><br>The project was then committed to GitHub and recorded for documentation purposes.
+                  </div>
+               </div>
+            </li>
+            <li class="case-study-timeline-item">
+               <div class="title">Integrating Gifted Chat Library</div>
+               <div class="descr">
+                  <div>
+                     To render the Chat screen and create basic functionality, I first
+                     installed, then imported and
+                     rendered, a GiftedChat component in Chat.js. I managed the messages state with useState() and added
+                     initial static messages via useEffect().
+                  </div>
+                  <div id="myImg" class="modal-trigger tooltip">
+                     <img src="img/useEffect-static-message.jpg" class="case-study-timeline-image"
+                        alt="useEffect Static Message">
+                     <span class="tooltiptext">Click Image to Expand</span>
+                  </div>
+                  <div>To ensure a smooth user experience, I used
+                     KeyboardAvoidingView
+                     for both Android and iOS, preventing the keyboard from covering the input field.
+                  </div>
+                  <div id="myImg" class="modal-trigger tooltip">
+                     <img src="img/gifted_chat_render.jpg" class="case-study-timeline-image" alt="Gifted Chat Render">
+                     <span class="tooltiptext">Click Image to Expand</span>
+                  </div>
+                  <div>
+                     <br>After
+                     thoroughly
+                     commenting on the code, I updated the GitHub repository to document the progress.
+                  </div>
+               </div>
+            </li>
+            <li class="case-study-timeline-item">
+               <div class="title">Integrating Firebase and Firestore</div>
+               <div class="descr">
+                  <div>
+                     I integrated Firebase and Firestore for authentication and message storage. I
+                     created a
+                     new Firestore database, updated its read and write rules, and enabled anonymous sign-in.
+                     <br><br>After
+                     installing
+                     firebase, I initialized Firebase and Firestore in App.js, passing the database object to the
+                     chat
+                     component.
+                     In Start.js, I implemented anonymous user login with signInAnonymously(), passing the user ID,
+                     name,
+                     and
+                     background color to the chat screen upon successful login. <br><br>In Chat.js, I used the Firestore
+                     onSnapshot()
+                     listener to fetch messages in real-time, ensuring messages were sorted by createdAt in descending
+                     order.
+                     I updated the onSend() function to save new messages directly to Firestore using addDoc().
+                  </div>
+                  <div id="myImg" class="modal-trigger tooltip">
+                     <img src="img/firebase-db.jpg" class="case-study-timeline-image" alt="Firebase Database">
+                     <span class="tooltiptext">Click Image to Expand</span>
+                  </div>
+                  <div>Again, I pushed everything to GitHub, then tested and recorded the app's behavior for
+                     documentation.
+                  </div>
+               </div>
+            </li>
+            <li class="case-study-timeline-item">
+               <div class="title">Real-Time Network Connectivity</div>
+               <div class="descr">
+                  <div>
+                     The next step in the process was implementing a real-time network connectivity detection system and
+                     managing offline message storage. Using useNetInfo() to monitor network status, I wrote functions
+                     to
+                     toggle network status and passed that information in a prop to Chat.js, allowing the chat screen to
+                     adapt its data source
+                     based on connectivity.
+                     <br><br>In Chat.js, messages were fetched from Firestore if the connection was present, and local
+                     storage if not. Additionally, the input toolbar was disabled in offline mode to prevent users from
+                     composing messages or sending images.
+
+                     <br><br>Testing the app in both online and offline modes was crucial to ensure seamless
+                     functionality.
+                     Expo and Android Studio, as well a several handheld devices, were used in this phase to ensure
+                     functionality. <br><br>Finally, I documented the
+                     project, updated the GitHub repository, and recorded a demonstration showcasing the app's behavior
+                     in
+                     offline mode. The recording illustrated message retrieval from AsyncStorage and the absence of the
+                     input toolbar, effectively demonstrating the implemented offline functionality. Android Studio was
+                     used
+                     in part to test functionality, and also to record tests for documentation.
+                  </div>
+                  <div id="myImg" class="modal-trigger tooltip">
+                     <img src="img/chatapp-testing1.gif" class="case-study-timeline-image-gif" alt="ChatApp Testing">
+                     <span class="tooltiptext">Click Image to Expand</span>
+                  </div>
+               </div>
+            </li>
+            <li class="case-study-timeline-item">
+               <div class="title">Advanced Features and Documentation</div>
+               <div class="descr">
+                  <div>
+                     The final stage of the ChatApp project focused on implementing advanced communication features and
+                     refining the documentation. <br><br>I enhanced the chat screen by adding a button that opened a
+                     custom
+                     action
+                     sheet, allowing users to select an image from the library, take a photo, or share their current
+                     location.
+                     By connecting the app to Firebase Storage, images and location data could be securely uploaded and
+                     retrieved.
+                     <br><br>I created the custom action sheet through a new CustomActions.js component, integrated with
+                     GiftedChat
+                     to
+                     handle image picking, camera usage, and geolocation sharing. I also customized the chat's message
+                     bubbles
+                     to display maps for location messages.
+                  </div>
+                  <div id="myImg" class="modal-trigger tooltip">
+                     <img src="img/custom-actions-function.jpg" class="case-study-timeline-image"
+                        alt="Custom Actions Function">
+                     <span class="tooltiptext">Click Image to Expand</span>
+                  </div>
+                  <div>
+                     <br><br>After thoroughly testing these features and ensuring accessibility, I updated the GitHub
+                     repository
+                     and
+                     documented the app's setup in a comprehensive README.md file. The documentation included
+                     step-by-step
+                     instructions for setting up the development environment, configuring the database, and installing
+                     necessary libraries.
+                  </div>
+               </div>
+            </li>
+         </ul>
+         <br>
+         <ol class="case-study-card">
+            <li>
+               <h1>Conclusion</h1>
+               <p>Developing the ChatApp presented a range of challenges and valuable learning experiences. One of the
+                  most
+                  significant challenges was implementing seamless real-time messaging and offline functionality using
+                  Firebase
+                  Firestore. Coordinating Firestore synchronization with AsyncStorage to maintain a consistent chat
+                  experience
+                  required careful management of the network status and message caching mechanisms.</p>
+               <p>Another challenge was incorporating various media-sharing features, particularly managing permissions
+                  for
+                  accessing the device's camera, image library, and location services. Ensuring a smooth user experience
+                  involved
+                  not only adhering to React Native's permissions requirements but also carefully structuring custom
+                  action
+                  sheets to deliver a polished user interface.</p>
+               <p>Despite these challenges, the project was a valuable learning journey. I learned how to effectively
+                  use
+                  React-Native as a platform, Firebase and Firestore as backend services, and GiftedChat as a
+                  third-party
+                  library. I also gained insights into implementing advanced features for media sharing, enhancing
+                  accessibility
+                  through throughtful UI design, and modularizing components for reusability.</p>
+               Firebase and Firestore, utilize anonymous authorization of users, enhance accessibility features, and
+               implement
+               modular, reusable components.
+               Utilizing GiftedChat provided insight into integrating third-party libraries and customizing them to fit
+               specific requirements.</p>
+               <p>If I were to approach this project again, I would:</p>
+               <ul>
+                  <li class="case-study-card_list"><strong>Implement More Advanced Features</strong>: Always wanting to
+                     push the envelope, I am always thinking of new features to implement, such as Chat Channels,
+                     Contact Lists, and Push Notifications to expand usability. However, it is also important to keep
+                     focus on present tasks and not get sidetracked.</li>
+                  <li class="case-study-card_list"><strong>Modularize Features More Extensively</strong>: Breaking down
+                     features like media-sharing
+                     and
+                     geolocation into smaller, more focused components would have streamlined development and improved
+                     code
+                     readability.</li>
+                  <li class="case-study-card_list"><strong>Expand Testing Strategy</strong>: Incorporate automated tests
+                     for critical features like
+                     message
+                     sending, media sharing, and offline behavior to catch bugs earlier and ensure consistent
+                     functionality.
+                  </li>
+               </ul>
+               <p>Overall, the ChatApp project showcased the power of React Native for cross-platform mobile development
+                  and
+                  solidified my understanding of Firebase's comprehensive backend services. Moving forward, I'll carry
+                  these
+                  lessons into future projects, refining my development workflow and continuing to build intuitive,
+                  user-friendly
+                  applications.</p>
+            </li>
+         </ol>
+         <ol class="case-study-card">
+            <li>
+               <h1>Credits:</h1>
+               <p>Lead Developer: Doug Hill</p>
+               <p>Tutor: Adam Pagels</p>
+               <p>Mentor: Mahesh Rodrigo</p>
+               <br>
+               <p>Special thanks to the CareerFoundry team for providing the project brief and assets, as well as
+                  invaluable
+                  feedback and support throughout the development process. The project would not have been possible
+                  without
+                  their guidance and expertise.</p>
+               <button type="button" class="nav_button" onclick="window.location.href='index.html#work';">Back to My
+                  Projects</button>
+               <button type="button" class="nav_button" onclick="window.location.href='index.html';">Back to
+                  Home</button>
+            </li>
+         </ol>
+      </div>
+
+      <!-- Modal Structure for image expansion modals in timeline -->
+      <div id="myModal" class="modal">
+         <span class="close">&times;</span>
+         <img class="modal-content" id="img01">
+         <div id="caption"></div>
+      </div>
+   </main>
+
+
+   <footer class="page_footer">
+      <p class="footer_text">Find me on</p>
+      <div class="social-media">
+         <a href="https://github.com/stix2you" class="social-media__link" target="_blank">
+            <img src="img/github_icon.svg" class="social-media__img" alt="github logo">
+         </a>
+         <!-- LinkedIn link -->
+         <a href="https://www.linkedin.com/in/doug-hill-8b7634288/" class="social-media__link" target="_blank">
+            <img src="img/linkedin_icon.svg" class="social-media__img" alt="linkedin logo">
+         </a>
+      </div>
+   </footer>
+
+   <!--tota11y accessibility checker
+    <script src="js/tota11y.min.js"></script> -->
+   <script src="js/theme-toggle.js"></script>
+   <script src="js/modal.js"></script>
+</body>
+
+</html>

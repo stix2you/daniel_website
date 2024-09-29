@@ -1,0 +1,1363 @@
+/* 
+-----------------
+STYLING SECTIONS:
+-----------------
+1. Root Styling
+2. Default Link Styling
+3. Page Header Styling
+4. Page Footer Styling
+5. Index Page Styling
+6. About Page Styling
+7. Work Page Styling
+8. Contact Page Styling
+9. Case-Study Page Styling
+10. Modal Styling
+11. Tooltip on Image Hover Styling
+12. Responsive Styling
+
+NOTE: All colors are managed by variables for consistency and easy tuning 
+EXCEPT box shadows due to the complexity of the shadow property and the need for multiple values to be set. 
+*/
+
+/* ROOT STYLING */
+:root {
+   /* Font Styling: */
+   --font-family-1: "Lato", sans-serif;
+   --font-family-2: "Lato", sans-serif;
+   --font-family-3: "Annie Use Your Telescope", cursive;
+
+   --font-size-very-large: 36px;
+   --font-size-large: 30px;
+   --font-size-medium-large: 24px;
+   --font-size-medium: 18px;
+   --font-size-medium-small: 16px;
+   --font-size-small: 10px;
+   --font-weight-extra-bold: 900;
+   --font-weight-bold: 700;
+   --font-weight-normal: 400;
+   --font-weight-light: 100;
+
+   /* Color Palettes: */
+   --color-palette-1A: #fff;
+   --color-palette-1B: #98ABEE;
+   --color-palette-1C: #050a9c;
+   --color-palette-1D: #201658;
+   --color-palette-1E: #000;
+   --color-palette-1F: #7edaff;
+   /* action color - button backgrounds and nav links */
+   --color-palette-1G: #000000;
+   /* action color outline for definition if needed*/
+   --border-color-1: #ccc;
+   --background-color-1: #ffffff;
+   --background-color-2: #ffffff;
+   --bullet-color: #555;
+
+   /* Button Colors other than background which is an action color, see above: */
+   --button-text: #000000;
+   --button-border-color: #000000;
+   --button-hover-border-color: #000000;
+
+   /* Animation Specific Colors: */
+   --animation-color-one: rgb(100, 0, 0);
+   --animation-color-two: rgb(100, 65, 0);
+   --animation-color-three: rgb(100, 100, 0);
+   --animation-color-four: rgb(0, 100, 0);
+   --animation-color-five: rgb(0, 0, 100);
+   --animation-color-six: rgb(100, 0, 100);
+
+   /* TOGGLE COLORS */
+   --toggle-background: #222;
+   --toggle-active-background: #fff;
+   --toggle-background-linear-gradient-light: #444;
+   --toggle-background-linear-gradient-dark: #222;
+   --toggle-active-background-linear-gradient-light: #eaeaea;
+   --toggle-active-background-linear-gradient-dark: #f9f9f9;
+   --toggle-indicator-background: #444;
+   --toggle-indicator-active-background: #EAEAEA;
+
+}
+
+.dark-theme {
+   /* Dark Theme */
+   /* Color Palettes: */
+   --color-palette-1A: #000000;
+   --color-palette-1B: #232737;
+   --color-palette-1C: #5389ff;
+   --color-palette-1D: #d8d8d8;
+   /* logo text, header text */
+   --color-palette-1E: #e6e6e6;
+   --color-palette-1F: #3dc8ff;
+   /* action color - button backgrounds and nav links */
+   --color-palette-1G: #000000;
+   /* action color outline for definition if needed*/
+   --border-color-1: #cccccc;
+   --background-color-1: #000000;
+   --background-color-2: #000000;
+   /* old color: #1B78C9 */
+
+   /* Button Colors other than background which is an action color, see above: */
+   --button-text: rgb(0, 0, 0);
+   --button-border-color: #000000;
+   --button-hover-border-color: #7edaff;
+}
+
+html {
+   scroll-behavior: smooth;
+}
+
+* {
+   box-sizing: border-box;
+}
+
+h1 {
+   font-size: var(--font-size-very-large);
+   color: var(--color-palette-1E);
+
+}
+
+body {
+   /* Define the main background color or image ! */
+   background-color: var(--color-palette-1A);
+   /* Apply a gradient overlay as the background -- colors can be set by variables at top of file */
+   background-image: linear-gradient(to right,
+         var(--background-color-2),
+         var(--background-color-1),
+         var(--background-color-1),
+         var(--background-color-2));
+   background-size: cover;
+   background-repeat: no-repeat;
+   min-height: 100vh;
+   width: 100%;
+   margin: 0;
+   padding: 0;
+}
+
+/* ROOT STYLING */
+
+
+
+
+
+/* DEFAULT LINK/NAV STYLING */
+a {
+   color: var(--color-palette-1F);
+   text-decoration: none;
+}
+
+.contact-link {
+   font-size: 21px;
+   color: var(--color-palette-1C)
+}
+
+a:visited {
+   color: var(--color-palette-1F);
+}
+
+a:active {
+   color: var(--color-palette-1F);
+   font-weight: var(--font-weight-bold);
+}
+
+.button,
+button {
+   display: flex;
+   justify-content: center;
+   font-family: inherit;
+   font-size: var(--font-size-medium);
+   background-color: var(--color-palette-1F);
+   color: var(--button-text);
+   text-decoration: none;
+   border-width: 1px;
+   border-radius: 20px;
+   transition-duration: 0.2s;
+   transition-property: opacity;
+}
+
+/* hover effects combined so they are consistent across the page*/
+a:hover,
+a:focus,
+button:hover,
+button:focus,
+.button:hover,
+.button:focus {
+   cursor: pointer;
+   opacity: 0.8;
+   border-color: var(--button-hover-border-color);
+}
+
+#home,
+#about,
+#work,
+#contact {
+   padding-top: 80px;
+   /* Adjust for fixed header height */
+}
+
+/* DEFAULT LINK/NAV STYLING */
+
+
+
+
+
+
+/* PAGE HEADER STYLING */
+.page-header {
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   width: 100%;
+   padding: 0px 150px 0px 0px;
+   background-color: var(--color-palette-1A);
+   position: fixed;
+   z-index: 1000;
+   /* High z-index to ensure it's on top (navbar and all header items) */
+}
+
+.special {
+   width: 100%;
+}
+
+.logo_text {
+   font-family: var(--font-family-3);
+   font-size: 70px;
+   font-weight: 700;
+   color: var(--color-palette-1E);
+   text-shadow:
+      -0.5px -0.5px 0 var(--color-palette-1A),
+      0.5px -0.5px 0 var(--color-palette-1A),
+      -0.5px 0.5px 0 var(--color-palette-1A),
+      0.5px 0.5px 0 var(--color-palette-1A);
+   cursor: pointer;
+   display: inline-block;
+   padding-left: 30px;
+   white-space: nowrap;
+}
+
+.logo_text .small {
+   font-family: var(--font-family-3);
+   font-size: 28px;
+   font-weight: 700;
+   color: var(--color-palette-1E);
+   text-shadow:
+      -0.5px -0.5px 0 var(--color-palette-1A),
+      0.5px -0.5px 0 var(--color-palette-1A),
+      -0.5px 0.5px 0 var(--color-palette-1A),
+      0.5px 0.5px 0 var(--color-palette-1A);
+   vertical-align: center;
+   margin-left: 5px;
+}
+
+.navigation-list {
+   display: flex;
+   justify-content: flex-end;
+   margin: 0;
+   padding: 30px 0px 0px 0px;
+   list-style: none;
+}
+
+.navigation-list__item {
+   padding: 0 15px;
+   color: var(--color-palette-1F);
+   text-shadow:
+      -0.5px -0.5px 0 var(--color-palette-1G),
+      0.5px -0.5px 0 var(--color-palette-1G),
+      -0.5px 0.5px 0 var(--color-palette-1G),
+      0.5px 0.5px 0 var(--color-palette-1G);
+   /* font-family: var(--font-family-2); */
+   font-family: var(--font-family-3);
+   font-size: var(--font-size-medium-large);
+   letter-spacing: 2px;
+   font-weight: var(--font-weight-normal);
+}
+
+.navigation-list__item--active {
+   color: var(--color-palette-1F);
+   font-weight: var(--font-weight-bold);
+   letter-spacing: 3px;
+}
+
+.page-header__item:last-child {
+   flex-grow: 0;
+}
+
+.page-header nav {
+   position: relative;
+}
+
+.moon-icon {
+   position: absolute;
+   left: 60px;
+}
+
+.sun-icon {
+   position: relative;
+   right: 25px;
+}
+
+.theme-toggle {
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+}
+
+.icon {
+   width: 20px;
+   height: 20px;
+}
+
+.theme-toggle .moon-icon svg,
+.theme-toggle .sun-icon svg {
+   fill: currentColor;
+}
+
+.light .moon-icon svg {
+   color: black;
+}
+
+.light .sun-icon svg {
+   color: white;
+}
+
+.dark .moon-icon svg {
+   color: white;
+}
+
+.dark .sun-icon svg {
+   color: black;
+}
+
+#toggle {
+   position: absolute;
+   top: 58px;
+   /* Adjust vertical position of toggle switch */
+   right: 50px;
+   /* Adjust horizontal position of toggle switch */
+   display: block;
+   width: 50px;
+   height: 20px;
+   border-radius: 160px;
+   background: var(--toggle-background);
+   transition: 0.5s;
+   cursor: pointer;
+   box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.1),
+      inset 0 8px 8px rgba(0, 0, 0, 0.1),
+      inset 0 -4px 4px rgba(0, 0, 0, 0.1);
+}
+
+#toggle.active {
+   background: var(--toggle-active-background);
+   box-shadow: inset 0 2px 60px rgba(0, 0, 0, 0.1),
+      inset 0 2px 8px rgba(0, 0, 0, 0.1),
+      inset 0 -4px 4px rgba(0, 0, 0, 0.1);
+}
+
+#toggle .indicator {
+   position: absolute;
+   top: 0px;
+   left: 0px;
+   width: 20px;
+   height: 20px;
+   background: linear-gradient(to bottom,
+         var(--toggle-background-linear-gradient-light),
+         var(--toggle-background-linear-gradient-dark));
+   border-radius: 50%;
+   transform: scale(0.9);
+   box-shadow: inset 0 8px 40px rgba(0, 0, 0, 0.5),
+      inset 0 4px 4px rgba(255, 255, 255, 0.2),
+      inset 0 -4px 4px rgba(255, 255, 255, 0.2);
+   transition: 0.5s;
+}
+
+#toggle.active .indicator {
+   left: 30px;
+   background: linear-gradient(to bottom,
+         var(--toggle-active-background-linear-gradient-light),
+         var(--toggle-active-background-linear-gradient-dark));
+   box-shadow: inset 0 8px 20px rgba(0, 0, 0, 0.1),
+      inset 0 4px 4px rgba(255, 255, 255, 1),
+      inset 0 -4px 4px rgba(255, 255, 255, 1);
+}
+
+/* PAGE HEADER STYLING */
+
+
+
+
+
+
+
+
+
+/* PAGE FOOTER STYLING */
+.page_footer {
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-bottom: 20px;
+}
+
+/* Styling for the section containing the social media links */
+.social-media {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 10px;
+}
+
+/* Styling for the social media images */
+.social-media__img {
+   width: 40px;
+   height: auto;
+   cursor: pointer;
+}
+
+.footer_text {
+   font-size: var(--font-size-medium);
+   margin-bottom: 10px;
+}
+
+/* PAGE FOOTER STYLING */
+
+
+
+
+
+
+
+/* INDEX PAGE STYLING */
+body {
+   background-color: var(--color-palette-1A);
+   margin: 0;
+   font-family: var(--font-family-1);
+   line-height: 1.5;
+   color: var(--color-palette-1D);
+}
+
+.main-container {
+   width: 90%;
+   max-width: 1200px;
+   margin: auto;
+   text-align: center;
+   padding: 20px;
+
+}
+
+.first-row {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-bottom: 5px;
+}
+
+.profile {
+   padding-top: 120px;
+}
+
+.profile_portrait {
+   width: 20%;
+   max-width: 250px;
+   float: left;
+   margin-right: 20px;
+   border-radius: 30%;
+   height: auto;
+}
+
+.text-content h1,
+.text-content p {
+   text-align: left;
+   margin: 0;
+   padding: 0;
+}
+
+.introduction_header {
+   color: var(--color-palette-1E);
+   padding-top: 120px;
+   /* Ensure content starts below the navbar */
+}
+
+.introduction {
+   text-align: left;
+   font-size: var(--font-size-medium);
+   font-weight: var(--font-weight-normal);
+}
+
+.bold-span {
+   font-size: var(--font-size-medium-large);
+   font-weight: var(--font-weight-bold);
+   color: var(--color-palette-1C);
+}
+
+.second-row img {
+   width: 100%;
+   max-width: 600px;
+   height: auto;
+}
+
+.third-row {
+   display: flex;
+   justify-content: center;
+   margin-top: 20px;
+}
+
+.nav_button {
+   margin: 10px 10px;
+   border-radius: 20px;
+   padding: 10px;
+}
+
+.madison-picture img {
+   width: 100%;
+   max-width: 600px;
+   height: auto;
+}
+
+.madison-picture {
+   display: flex;
+   justify-content: center;
+}
+
+.Schumann_Quote {
+   font-family: "Caveat", cursive;
+   font-size: var(--font-size-large);
+
+}
+
+/* Keyframes for the color change animation */
+@keyframes color-change {
+   0% {
+      fill: var(--animation-color-one);
+   }
+
+   10% {
+      fill: var(--animation-color-two);
+   }
+
+   30% {
+      fill: var(--animation-color-three);
+   }
+
+   50% {
+      fill: var(--animation-color-four);
+   }
+
+   70% {
+      fill: var(--animation-color-five);
+   }
+
+   90% {
+      fill: var(--animation-color-six);
+   }
+
+   100% {
+      fill: var(--animation-color-one);
+   }
+}
+
+.skyline {
+   animation: 120s color-change infinite normal linear;
+}
+
+/* INDEX PAGE STYLING */
+
+
+
+
+
+
+/* ABOUT PAGE STYLING */
+.about {
+   padding: 20px;
+   padding-top: 60px;
+   max-width: 1200px;
+   margin: 0 auto;
+   text-align: center;
+}
+
+.journey {
+   text-align: left;
+}
+
+/* Journey section cards styling */
+.journey-card {
+   background-color: var(--color-palette-1A);
+   border: 1px solid var(--border-color-1);
+   padding: 15px 20px;
+   border-radius: 8px;
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+   margin-top: 20px;
+}
+
+/* Journey section content styling */
+.journey-section {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: flex-start;
+   margin-bottom: 20px;
+}
+
+/* Left text with right image */
+.left-text p {
+   order: 1;
+}
+
+.left-text .journey-images {
+   order: 2;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+}
+
+/* Right text with left image */
+.right-text p {
+   order: 2;
+}
+
+.right-text .journey-images {
+   order: 1;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-end;
+}
+
+.journey-img {
+   width: 300px;
+   height: auto;
+   margin-bottom: 15px;
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.journey-section p {
+   flex: 1 1 0;
+   margin-right: auto;
+   margin-bottom: 15px;
+   padding: 15px;
+}
+
+.journey h3 {
+   font-size: var(--font-size-medium-large);
+   font-weight: var(--font-weight-light);
+   color: var(--color-palette-1C);
+   margin-top: 0;
+   position: relative;
+   padding-bottom: 20px;
+}
+
+.journey h3::after {
+   content: "";
+   display: block;
+   width: calc(100% - 40px); /* 20px padding on each side */
+   height: 1px;
+   background-color: var(--border-color-1);
+   position: absolute;
+   bottom: 0;
+   left: 50%;
+   transform: translateX(-50%);
+}
+
+
+
+
+
+
+
+
+/* SKILLS PAGE STYLING */
+.skills {
+   padding: 20px;
+   padding-top: 120px; /* Ensure content starts below the navbar */
+   max-width: 1200px;
+   margin: 0 auto;
+   text-align: center; /* Center text within the container */
+ }
+ 
+ /* Styling the ordered list grid container */
+ .tech-stack {
+   display: grid;
+   grid-template-columns: repeat(3, 375px); /* Creates 3 columns with each 500px wide */
+   justify-content: center; /* Centers the grid within the container */
+   gap: 20px; /* Adjust the space between cards as needed */
+   list-style-type: none;
+   padding: 0;
+   margin: 0 auto; /* Center the container itself */
+ }
+ 
+ /* Styling each list item in the ordered list */
+ .tech-stack > li {
+   min-height: 200px; /* Minimum height for each card */
+   background-color: var(--color-palette-1A);
+   border: 1px solid var(--border-color-1);
+   padding: 15px 20px;
+   border-radius: 8px;
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+   font-size: var(--font-size-medium);
+   font-weight: var(--font-weight-light);
+   color: var(--color-palette-1C);
+ }
+
+/* Styling nested unordered lists */
+.tech-stack ul {
+   padding-left: 20px;
+   list-style-type: none;
+   font-size: 0.8em;
+   color: var(--color-palette-1D);
+}
+
+/* Styling list items in nested lists */
+.tech-stack ul li {
+   margin-bottom: 5px;
+}
+
+/* Styling bullets for nested list items with a custom character */
+.tech-stack ul li:before {
+   content: "— ";
+   /* En dash for a bullet point look */
+   color: var(--bullet-color);
+   /* Dark gray color for bullets */
+   padding-right: 5px;
+}
+/* SKILLS PAGE STYLING */
+
+
+
+
+
+
+
+
+/* PROJECT LIST STYLING */
+.work {
+   text-align: center;
+   max-width: 1200px;
+   margin: 0 auto;
+   padding-top: 100px;
+   /* Ensure content starts below the navbar */
+}
+
+.project-list {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+   grid-gap: 15px;
+   /* Space between cards */
+   padding: 15px;
+   /* Padding around the entire grid */
+   margin: 0 auto;
+   /* Centers the grid in the section */
+   max-width: 1200px;
+   /* Maximum width of the grid */
+}
+
+.project-list__item {
+   display: grid;
+   grid-template-rows: auto auto 1fr auto;
+   background-color: var(--color-palette-1A);
+   border: 1px solid var(--border-color-1);
+   padding: 10px;
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+   transition: transform 0.3s ease-in-out;
+}
+
+.project-list__item:hover {
+   transform: scale(1.03);
+   /* Slight raise effect on hover */
+}
+
+.project-image {
+   width: 100%;
+   /* Ensures the image fills the card width */
+   height: auto;
+   /* Keeps image aspect ratio intact */
+   border-radius: 5px;
+   /* Optional: rounds the corners of the image */
+   margin-bottom: 5px;
+   /* Space between the image and text content */
+   border: 1px solid var(--border-color-1);
+}
+
+.project-button-container {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-between;
+   margin-top: 10px;
+}
+
+.project_link {
+   flex: 1;
+   margin: 5px;
+   min-width: 0;
+   /* Allow buttons to shrink if needed */
+}
+
+
+
+
+
+
+
+
+
+
+/* CONTACT PAGE STYLING */
+.contact {
+   text-align: center;
+   max-width: 700px;
+   margin: 0 auto;
+   padding-top: 120px;
+   /* Ensure content starts below the navbar */
+}
+
+.contact_container {
+   text-align: center;
+   padding: 0 0;
+   font-size: var(--font-size-medium);
+   font-weight: var(--font-weight-normal);
+   max-width: 700px;
+   margin: 0 auto;
+   justify-content: center;
+}
+
+.form-submit-button {
+   display: block;
+   margin: 20px auto;
+   width: 150px;
+}
+
+#thankYouModal {
+   display: none;
+   position: fixed;
+   z-index: 2000;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   width: 300px;
+   max-width: 100%;
+   padding: 20px;
+   overflow: auto;
+   color: var(--color-palette-1E);
+   background-color: var(--color-palette-1A);
+   border: 1px solid var(--border-color-1);
+   border-radius: 10px;
+}
+
+/* ^^^ CONTACT PAGE STYLING ^^^ */
+
+
+
+
+/* CASE STUDY STYLES */
+.case-study {
+   text-align: center;
+   max-width: 1200px;
+   margin: 0 auto;
+   padding-top: 120px;
+}
+
+.case-study h1 {
+   text-align: center;
+}
+
+/* Styling each list item in the ordered list */
+.case-study-card>li {
+   list-style: none;
+   background-color: var(--color-palette-1A);
+   border: 1px solid var(--border-color-1);
+   padding: 15px 20px;
+   border-radius: 10px;
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+   font-size: var(--font-size-medium);
+   font-weight: var(--font-weight-light);
+   color: var(--color-palette-1E);
+   margin: 20px;
+}
+
+.case-study-card-image-left {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 20px;
+   align-items: center;
+   padding: 20px;
+   background-color: var(--color-palette-1A);
+   border: 1px solid var(--border-color-1);
+   border-radius: 10px;
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+.case-study-card-image-right {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 20px;
+   align-items: center;
+   padding: 20px;
+   background-color: var(--color-palette-1A);
+   border: 1px solid var(--border-color-1);
+   border-radius: 10px;
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+.case-study-image {
+   width: 100%;
+   border-radius: 10px;
+   border: 2px solid var(--border-color-1);
+}
+
+.case-study-intro {
+   padding: 20px;
+}
+
+.case-study-card h1 {
+   font-size: var(--font-size-very-large);
+   color: var(--color-palette-1E);
+}
+
+.case-study-card h2 {
+   font-size: var(--font-size-large);
+   color: var(--color-palette-1E);
+}
+
+.case-study-card h3 {
+   font-size: var(--font-size-medium-large);
+   color: var(--color-palette-1E);
+}
+
+/* Styling nested unordered lists */
+.case-study-card ul {
+   padding-left: 20px;
+   list-style-type: none;
+   font-size: 0.8em;
+   color: var(--color-palette-1E);
+}
+
+/* Styling list items in nested lists */
+.case-study-card ul li {
+   margin-bottom: 5px;
+}
+
+/* Styling bullets for nested list items with a custom character */
+.case-study-card ul li:before {
+   content: "— ";
+   color: var(--bullet-color);
+   padding-right: 5px;
+}
+
+/* Styling for the lists within the case study cards */
+.case-study-card_list {
+   text-align: left;
+   padding: 0 40px;
+   margin: 0 40px;
+   font-size: var(--font-size-medium-small);
+   font-weight: var(--font-weight-normal);
+}
+
+.case-study-card-tech-stack-container {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows: auto auto;
+   align-items: start;
+   gap: 20px;
+   background-color: var(--color-palette-1A);
+   padding: 20px;
+   margin: 20px;
+}
+
+.case-study-card-tech-stack-container-image {
+   width: 100%;
+   height: auto;
+   aspect-ratio: 1 / 1;
+   border-radius: 10px;
+}
+
+.case-study-card button.nav_button {
+   display: block;
+   margin: 0 auto 15px auto;
+}
+
+.tech-info {
+   display: flex;
+   flex-direction: column;
+}
+
+.tech-info h3 {
+   margin-bottom: 5px;
+}
+
+/* Specific grid placements within the Tech Stack Decisions box */
+.case-study-card-tech-stack-container img:nth-of-type(1) {
+   grid-area: 1 / 1 / 2 / 2;
+   /* React Native logo position */
+}
+
+.tech-info:nth-of-type(1) {
+   grid-area: 1 / 2 / 2 / 3;
+   /* React Native & Gifted Chat text */
+}
+
+.tech-info:nth-of-type(2) {
+   grid-area: 2 / 1 / 3 / 2;
+   /* Firebase & Firestore text */
+}
+
+.case-study-card-tech-stack-container img:nth-of-type(2) {
+   grid-area: 2 / 2 / 3 / 3;
+   /* Firebase logo position */
+}
+
+.case-study-card-tech-stack-container img:nth-of-type(3) {
+   grid-area: 3 / 1 / 4 / 2;
+   /* Expo logo position */
+}
+
+.tech-info:nth-of-type(3) {
+   grid-area: 3 / 2 / 4 / 3;
+   /* Expo text */
+}
+
+/* TIMELINE STYLING */
+.case-study-timeline {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   list-style: none;
+   position: relative;
+}
+
+/* Card */
+.case-study-timeline-item:nth-child(odd) {
+   grid-column: 1 / 3;
+   border-right: 4px solid var(--color-palette-1D);
+}
+
+.case-study-timeline-item:nth-child(even) {
+   grid-column: 2 / 4;
+   border-left: 4px solid var(--color-palette-1D);
+}
+
+/* Title */
+.case-study-timeline-item .title {
+   height: 3rem;
+   margin: 0 -4px;
+   text-align: center;
+   background-color: var(--color-palette-1F);
+   color: var(--button-text);
+   font-size: 1.25rem;
+   font-weight: 700;
+   border: 0.25rem solid var(--color-palette-1D);
+   place-content: center;
+   position: relative;
+   border-radius: 0px 50px 50px 0px;
+}
+
+.case-study-timeline-item:nth-child(odd) .title {
+   border-radius: 50px 0px 0px 50px;
+}
+
+/* Description */
+.case-study-timeline-item .descr {
+
+   position: relative;
+   padding-inline: 1.5rem;
+   padding-block-end: 1.5rem;
+   font-weight: 300;
+   align-items: center;
+   padding: 40px;
+}
+
+.case-study-timeline-item .descr::before {
+   z-index: -1;
+   bottom: 0.25rem;
+}
+
+.case-study-timeline-image {
+   width: 100%;
+   height: auto;
+   cursor: pointer;
+   border-radius: 10px;
+   margin-top: 30px;
+   border: 2px solid var(--border-color-1);
+}
+
+.case-study-timeline-image-gif {
+   width: auto;
+   height: 400px;
+   cursor: pointer;
+   border-radius: 10px;
+   margin-top: 30px;
+}
+
+/* ^^^ CASE STUDY STYLING ^^^ */
+
+
+
+/* MODAL STYLING */
+.modal {
+   display: none;
+   position: fixed;
+   z-index: 1000;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   overflow: auto;
+   background-color: rgb(0, 0, 0);
+   background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+   margin: auto;
+   display: block;
+   width: auto;
+   height: auto;
+}
+
+.close {
+   position: absolute;
+   top: 15px;
+   right: 35px;
+   color: #f1f1f1;
+   font-size: 40px;
+   font-weight: bold;
+   transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+   color: #bbb;
+   text-decoration: none;
+   cursor: pointer;
+}
+
+/* Caption text */
+#caption {
+   margin: auto;
+   display: block;
+   width: 80%;
+   max-width: 700px;
+   text-align: center;
+   color: #ccc;
+   padding: 10px 0;
+   height: 150px;
+}
+
+/* ^^^ MODAL STYLING ^^^ */
+
+
+
+/* TOOLTIP ON IMAGE HOVER STYLING */
+/* Tooltip container setup */
+.tooltip {
+   position: relative;
+   /* Context for absolute positioning */
+   display: inline-block;
+   /* Align with other inline elements like images */
+}
+
+/* Tooltip text setup */
+.tooltip .tooltiptext {
+   visibility: hidden;
+   /* Initially hidden */
+   width: 120px;
+   background-color: black;
+   color: white;
+   text-align: center;
+   border-radius: 6px;
+   padding: 5px 0;
+   /* Positioning the tooltip */
+   position: absolute;
+   z-index: 1000;
+   bottom: 50%;
+   left: 50%;
+   margin-left: -60px;
+   /* Centers the tooltip */
+   opacity: 0;
+   transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+   content: "";
+   position: absolute;
+   top: 100%;
+   left: 50%;
+   margin-left: -5px;
+   border-width: 5px;
+   border-style: solid;
+   border-color: black transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+   visibility: visible;
+   opacity: 1;
+}
+
+/* ^^^ TOOLTIP ON IMAGE HOVER STYLING ^^^ */
+
+
+
+/* RESPONSIVE STYLING */
+/* Responsive styling for case-study only*/
+@media (max-width: 600px) {
+   .case-study-timeline-item .title {
+      height: 100px;
+   }
+
+   .case-study-card-tech-stack-container {
+      display: flex;
+      flex-direction: column;
+   }
+
+   .case-study-card-image-left,
+   .case-study-card-image-right {
+      display: flex;
+      flex-direction: column;
+   }
+
+   #toggle {
+      position: absolute;
+      right: 50px;
+      top: 100px;
+      width: 40px;
+      height: 20px;
+   }
+
+   #toggle .indicator {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 20px;
+      height: 20px;
+   }
+
+   #toggle.active .indicator {
+      left: 19px;
+   }
+}
+
+/* RESPONSIVE STYLING - GENERAL*/
+/* Styles for narrow screens: max-width 500px */
+@media (max-width: 500px) {
+   .page-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* Center everything in the column */
+      padding: 10px;
+   }
+
+   .special {
+      display: flex;
+      justify-content: center;
+      /* Center navigation items */
+      width: 100%;
+      /* Full width */
+      margin: 10px 0;
+      /* Space above and below navigation */
+   }
+
+   .navigation-list {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      /* Spread items across the width */
+      list-style: none;
+      /* Remove list bullets */
+      padding: 0;
+      /* Remove default padding */
+      width: 100%;
+      /* Full width */
+   }
+
+   .navigation-list__item {
+      padding: 10px;
+      /* Padding for clickable area */
+   }
+
+   .light_dark_label {
+      font-size: 15px;
+      position: absolute;
+      right: 70px;
+      top: 77px;
+   }
+
+   .third-row {
+      display: flex;
+      flex-direction: column;
+      /* Stack buttons vertically */
+   }
+
+   .profile {
+      padding-top: 160px;
+   }
+
+   .about {
+      padding-top: 180px;
+      /* Ensure content starts below the navbar */
+      padding-left: 20px;
+      padding-right: 20px;
+   }
+
+   .tech-stack {
+      grid-template-columns: 1fr;
+      /* 1 column layout */
+   }
+
+   .project-list {
+      padding-top: 120px;
+      grid-template-columns: 1fr;
+      /* 1 column layout */
+   }
+
+   h1 {
+      font-size: 20px;
+   }
+
+   h2,
+   p,
+   a,
+   .project-link,
+   .project-link:visited {
+      font-size: 14px;
+      /* Smaller text on very small screens */
+   }
+}
+
+
+/* Styles for medium screens: between 501px and 750px */
+
+
+/* Adjustments for moderate small screens: up to 750px */
+@media (max-width: 750px) {
+   h1 {
+      font-size: 22px;
+      /* Slightly smaller headers */
+   }
+
+   h2,
+   p,
+   a {
+      font-size: 16px;
+      /* Standard text size for moderate screens */
+   }
+}
+
+/* Adjustments for navigation layout at less than 900px */
+@media (max-width: 900px) {
+   .page-header {
+      flex-direction: column;
+      align-items: flex-start;
+   }
+
+
+   .navigation-list {
+      display: flex;
+      padding: 0;
+      align-items: flex-end;
+      margin-left: 0;
+   }
+
+   .navigation-list__item {
+      margin: 10px 0;
+      line-height: 1.5;
+   }
+}
+
+/* ^^^ RESPONSIVE STYLING ^^^ */

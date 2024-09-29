@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Doug Hill Portfolio</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Young+Serif&display=swap">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto:wght@400&display=swap">
+   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+
+   <link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+
+   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+   <link rel="stylesheet" type="text/css" href="css/normalize.css">
+   <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+
+<body>
+
+   <header class="page-header">
+      <!--LOGO UPPER LEFT-->
+      <div onclick="window.location.href='index.html';" class="logo_text">
+         DH<span class="small">_Web_Dev_ ( ) { portfolio site } ;</span>
+     </div>
+
+      <!--MENU BAR-->
+      <nav class="page-header__item special">
+         <ul role="menubar" class="navigation-list">
+            <li role="presentation">
+               <a href="index.html" class="navigation-list__item navigation-list__item--active" role="menuitem"
+                  data-target="home" aria-label="Home Page">Home</a>
+            </li>
+            <li role="presentation">
+               <a href="index.html#about" class="navigation-list__item" role="menuitem" data-target="about"
+                  aria-label="Information about me">About</a>
+            </li>
+            <li role="presentation">
+               <a href="index.html#work" class="navigation-list__item" role="menuitem" data-target="work"
+                  aria-label="List of projects I have completed">Work</a>
+            </li>
+            <li role="presentation">
+               <a href="index.html#contact" class="navigation-list__item" role="menuitem" data-target="contact"
+                  aria-label="How to contact me">Contact</a>
+            </li>
+         </ul>
+      </nav>
+      <!-- LIGHT/DARK THEME TOGGLE BUTTON -->
+
+      <!-- LIGHT/DARK THEME TOGGLE BUTTON -->
+      <div id="toggle" class="theme-toggle active" onclick="toggleTheme()">
+         <div class="icon moon-icon">
+            <!-- Inline SVG for moon -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+               <path
+                  d="M12,17c-2.76,0-5-2.24-5-5s2.24-5,5-5,5,2.24,5,5-2.24,5-5,5Zm0-8c-1.65,0-3,1.35-3,3s1.35,3,3,3,3-1.35,3-3-1.35-3-3-3Zm1-5V1c0-.55-.45-1-1-1s-1,.45-1,1v3c0,.55,.45,1,1,1s1-.45,1-1Zm0,19v-3c0-.55-.45-1-1-1s-1,.45-1,1v3c0,.55,.45,1,1,1s1-.45,1-1ZM5,12c0-.55-.45-1-1-1H1c-.55,0-1,.45-1,1s.45,1,1,1h3c.55,0,1-.45,1-1Zm19,0c0-.55-.45-1-1-1h-3c-.55,0-1,.45-1,1s.45,1,1,1h3c.55,0,1-.45,1-1ZM6.71,6.71c.39-.39,.39-1.02,0-1.41l-2-2c-.39-.39-1.02-.39-1.41,0s-.39,1.02,0,1.41l2,2c.2,.2,.45,.29,.71,.29s.51-.1,.71-.29Zm14,14c.39-.39,.39-1.02,0-1.41l-2-2c-.39-.39-1.02-.39-1.41,0s-.39,1.02,0,1.41l2,2c.2,.2,.45,.29,.71,.29s.51-.1,.71-.29Zm-16,0l2-2c.39-.39,.39-1.02,0-1.41s-1.02-.39-1.41,0l-2,2c-.39,.39-.39,1.02,0,1.41,.2,.2,.45,.29,.71,.29s.51-.1,.71-.29ZM18.71,6.71l2-2c.39-.39,.39-1.02,0-1.41s-1.02-.39-1.41,0l-2,2c-.39,.39-.39,1.02,0,1.41,.2,.2,.45,.29,.71,.29s.51-.1,.71-.29Z" />
+            </svg>
+         </div>
+         <i class="indicator"></i>
+         <div class="icon sun-icon">
+            <!-- Inline SVG for sun -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+               <path
+                  d="M15,24a12.021,12.021,0,0,1-8.914-3.966,11.9,11.9,0,0,1-3.02-9.309A12.122,12.122,0,0,1,13.085.152a13.061,13.061,0,0,1,5.031.205,2.5,2.5,0,0,1,1.108,4.226c-4.56,4.166-4.164,10.644.807,14.41a2.5,2.5,0,0,1-.7,4.32A13.894,13.894,0,0,1,15,24Zm.076-22a10.793,10.793,0,0,0-1.677.127,10.093,10.093,0,0,0-8.344,8.8A9.927,9.927,0,0,0,7.572,18.7,10.476,10.476,0,0,0,18.664,21.43a.5.5,0,0,0,.139-.857c-5.929-4.478-6.4-12.486-.948-17.449a.459.459,0,0,0,.128-.466.49.49,0,0,0-.356-.361A10.657,10.657,0,0,0,15.076,2Z" />
+            </svg>
+         </div>
+      </div>
+   </header>
+
+   <!-- Case-Study Listing-->
+   <main>
+
+      <div class="case-study">
+         <h1>Pokédex Project</h1>
+         <ol class="case-study-card">
+            <li class="case-study-card-image-left">
+               <img src="img/Pokedex.jpg" class="case-study-image" alt="Pokedex screenshot">
+               <div>
+                  <h2>Overview</h2>
+                  <p>
+                     Pokédex is a web application that allows users to browse and search for information about Pokémon
+                     species. The application features a clean, intuitive interface with a responsive design that
+                     adapts to different screen sizes. Users can view detailed information about each Pokémon, including
+                     its name, type, abilities, and base stats. The application also includes a search bar that allows
+                     users to filter Pokémon by name or type, making it easy to find specific species. Pokédex is built
+                     using simple HTML, CSS, and Javascript, with data fetched from the PokéAPI RESTful API.
+                  </p>
+                  <a href="https://pokeapi.co" target="_blank">
+                     <button type="button" class="nav_button project_link">Pokémon API Used For Project</button>
+                  </a>
+               </div>
+            </li>
+            <li class="case-study-card-image-right">
+               <div>
+                  <h2>Purpose & Context</h2>
+                  <p>
+                     One of the large case uses for websites is still basic information retrieval. The Pokédex project
+                     was created to demonstrate my ability to build a simple, responsive web application that fetches
+                     data from an external API and displays it in a user-friendly way. The project was designed to
+                     showcase my skills in front-end development, including HTML, CSS, and Javascript, as well as my
+                     ability to work with APIs and handle asynchronous data fetching. By building the Pokédex
+                     application, I was able to demonstrate my proficiency in creating interactive, data-driven web
+                     applications that provide value to users.
+                  </p>
+               </div>
+               <img src="img/Pokedex-detail.jpg" class="case-study-image" alt="Pokedex Detail Example">
+            </li>
+            <li>
+               <h2>Objective</h2>
+               <p>The application needed to support the following features:</p>
+               <ul>
+                  <li class="case-study-card_list"><strong>Browse Pokémon</strong>: View a list of Pokémon with
+                     corresponding images and names.</li>
+                  <li class="case-study-card_list"><strong>View Pokémon Details</strong>: Access detailed information
+                     about each Pokémon,
+                     including its type, abilities, and base stats.</li>
+                  <li class="case-study-card_list"><strong>Search Pokémon</strong>: Search for Pokémon by name or type
+                     using a search bar.</li>
+                  <li class="case-study-card_list"><strong>Responsive Design</strong>: Ensure that the application is
+                     responsive and adapts to different screen sizes.</li>
+                  <li class="case-study-card_list"><strong>Fetch Data from API</strong>: Use the PokéAPI RESTful API to
+                     fetch Pokémon data and display it in the application.</li>
+               </ul>
+               </ul>
+            </li>
+            <br>
+
+            <li>
+               <h1>Technology Stack Decisions</h1>
+               <p>The Project Brief required the use of simple HTML, CSS, and Javascript to build the Pokédex
+                  application. I chose to use the following technologies:</p>
+
+               </p>
+               </p>
+               <div class="case-study-card-tech-stack-container">
+                  <img src="img/html-css-js-logo.jpg" class="case-study-card-tech-stack-container-image"
+                     alt="HTML CSS JS Logo">
+                  <div class="tech-info">
+                     <h3>HTML, CSS, and Javascript</h3>
+                     <p>HTML, CSS, and Javascript are the core technologies used to build the Pokédex application.
+                        HTML
+                        provides the structure and content of the web page, CSS styles the page's layout and
+                        appearance,
+                        and Javascript adds interactivity and dynamic functionality. By combining these three
+                        technologies, I was able to create a responsive, user-friendly web application that fetches
+                        and
+                        displays Pokémon data from the PokéAPI.</p>
+                  </div>
+                  <img src="img/rest-logo.jpg" class="case-study-card-tech-stack-container-image"
+                     alt="REST Architecture Logo">
+                  <div class="tech-info">
+                     <h3>RESTful API</h3>
+                     <p>The PokéAPI is a RESTful API that provides a wealth of information about Pokémon species,
+                        including their names, types, abilities, and base stats. By fetching data from the PokéAPI
+                        using
+                        Javascript's fetch API, I was able to access detailed information about each Pokémon and
+                        display
+                        it in the Pokédex application. The RESTful API architecture allowed me to make HTTP requests
+                        to
+                        the PokéAPI's endpoints and receive JSON responses that I could parse and render in the
+                        application.</p>
+                  </div>
+                  <div class="tech-info">
+                     <h3>Responsive Design</h3>
+                     <p>Responsive design is a critical aspect of modern web development that ensures web applications
+                        look and function well on a variety of devices and screen sizes. By using CSS media queries
+                        and
+                        flexible layout techniques, I was able to create a responsive design for the Pokédex
+                        application
+                        that adapts to different screen sizes, from desktops to mobile devices. The responsive design
+                        allowed users to access the application on any device and enjoy a consistent, user-friendly
+                        experience.</p>
+                  </div>
+                  <img src="img/responsive-logo.jpg" class="case-study-card-tech-stack-container-image"
+                     alt="Responsive Design Logo">
+                  <div class="tech-info">
+                     <h3>AJAX</h3>
+                     <p>AJAX (Asynchronous Javascript and XML) is a technique used to fetch data from a server without
+                        reloading the entire web page. By using Javascript's fetch API and async/await syntax, I was
+                        able to fetch Pokémon data from the PokéAPI asynchronously and update the UI with the fetched
+                        data. AJAX allowed me to create a seamless user experience by fetching data in the background
+                        and updating the UI without blocking the main thread.</p>
+                  </div>
+                  <img src="img/ajax.jpg" class="case-study-card-tech-stack-container-image" alt="AJAX Logo">
+               </div>
+            </li>
+         </ol>
+         <br>
+         <ol class="case-study-card">
+            <li>
+               <h1>Conclusion</h1>
+               <p>In developing the Pokédex application early in my Web Dev journey, I was able to demonstrate my
+                  proficiency in front-end development and my ability to work with external APIs. The project allowed me
+                  to showcase my skills in HTML, CSS, and Javascript, as well as my understanding of responsive design,
+                  asynchronous data fetching, and DOM manipulation. By building the Pokédex application, I was able to
+                  create a user-friendly web application that provides value to users by allowing them to browse and
+                  search for information about Pokémon species. The project also helped me gain experience in working
+                  with RESTful APIs and handling data fetching in a web application. Overall, the Pokédex project was a
+                  valuable learning experience that allowed me to apply my skills in front-end development and create a
+                  functional, interactive web application.</p>
+               <button type="button" class="nav_button" onclick="window.location.href='index.html#work';">Back to My
+                  Projects</button>
+               <button type="button" class="nav_button" onclick="window.location.href='index.html';">Back to
+                  Home</button>
+            </li>
+         </ol>
+      </div>
+   </main>
+
+
+   <footer class="page_footer">
+      <p class="footer_text">Find me on</p>
+      <div class="social-media">
+         <a href="https://github.com/stix2you" class="social-media__link" target="_blank">
+            <img src="img/github_icon.svg" class="social-media__img" alt="github logo">
+         </a>
+         <!-- LinkedIn link -->
+         <a href="https://www.linkedin.com/in/doug-hill-8b7634288/" class="social-media__link" target="_blank">
+            <img src="img/linkedin_icon.svg" class="social-media__img" alt="linkedin logo">
+         </a>
+      </div>
+   </footer>
+
+   <!--tota11y accessibility checker
+    <script src="js/tota11y.min.js"></script> -->
+   <script src="js/theme-toggle.js"></script>
+</body>
+
+</html>
