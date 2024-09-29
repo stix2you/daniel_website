@@ -1329,7 +1329,7 @@ body {
 
 @media (max-width: 530px) {
 
-.page-header {
+   .page-header {
       padding-bottom: 50px;
    }
 
@@ -1358,7 +1358,42 @@ body {
       /* Ensure padding/margins are included in the element's total width */
    }
 
+   .main-container {
+      h1 {
+         font-size: 20px;
+      }
 
+      p {
+         font-size: 14px;
+      }
+   }
+
+   .bold-span {
+      font-size: 16px;
+   }
+
+   .about {
+      padding-top: 0px;
+      /* Adjust for fixed header height */
+   }
+
+   .first-row {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 5px;
+   }
+
+   .skills {
+      padding-top: 0px;
+      /* Adjust for fixed header height */
+   }
+
+   .project-list {
+      padding-top: 0px;
+      /* Adjust for fixed header height */
+   }
 
    #toggle {
       position: absolute;
@@ -1378,6 +1413,15 @@ body {
 
    #toggle.active .indicator {
       left: 19px;
+   }
+
+   #home,
+   #about,
+   #skills,
+   #work,
+   #contact {
+      padding-top: 200px;
+      /* Adjust for fixed header height */
    }
 }
 
