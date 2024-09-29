@@ -647,7 +647,8 @@ body {
 .journey h3::after {
    content: "";
    display: block;
-   width: calc(100% - 40px); /* 20px padding on each side */
+   width: calc(100% - 40px);
+   /* 20px padding on each side */
    height: 1px;
    background-color: var(--border-color-1);
    position: absolute;
@@ -666,26 +667,33 @@ body {
 /* SKILLS PAGE STYLING */
 .skills {
    padding: 20px;
-   padding-top: 120px; /* Ensure content starts below the navbar */
+   padding-top: 120px;
+   /* Ensure content starts below the navbar */
    max-width: 1200px;
    margin: 0 auto;
-   text-align: center; /* Center text within the container */
- }
- 
- /* Styling the ordered list grid container */
- .tech-stack {
+   text-align: center;
+   /* Center text within the container */
+}
+
+/* Styling the ordered list grid container */
+.tech-stack {
    display: grid;
-   grid-template-columns: repeat(3, 375px); /* Creates 3 columns with each 500px wide */
-   justify-content: center; /* Centers the grid within the container */
-   gap: 20px; /* Adjust the space between cards as needed */
+   grid-template-columns: repeat(3, 375px);
+   /* Creates 3 columns with each 500px wide */
+   justify-content: center;
+   /* Centers the grid within the container */
+   gap: 20px;
+   /* Adjust the space between cards as needed */
    list-style-type: none;
    padding: 0;
-   margin: 0 auto; /* Center the container itself */
- }
- 
- /* Styling each list item in the ordered list */
- .tech-stack > li {
-   min-height: 200px; /* Minimum height for each card */
+   margin: 0 auto;
+   /* Center the container itself */
+}
+
+/* Styling each list item in the ordered list */
+.tech-stack>li {
+   min-height: 200px;
+   /* Minimum height for each card */
    background-color: var(--color-palette-1A);
    border: 1px solid var(--border-color-1);
    padding: 15px 20px;
@@ -694,7 +702,7 @@ body {
    font-size: var(--font-size-medium);
    font-weight: var(--font-weight-light);
    color: var(--color-palette-1C);
- }
+}
 
 /* Styling nested unordered lists */
 .tech-stack ul {
@@ -717,6 +725,7 @@ body {
    /* Dark gray color for bullets */
    padding-right: 5px;
 }
+
 /* SKILLS PAGE STYLING */
 
 
@@ -1194,52 +1203,47 @@ body {
 
 
 /* RESPONSIVE STYLING */
-/* Responsive styling for case-study only*/
-@media (max-width: 600px) {
-   .case-study-timeline-item .title {
-      height: 100px;
-   }
 
-   .case-study-card-tech-stack-container {
-      display: flex;
+@media (max-width: 1050px) {
+   .page-header {
       flex-direction: column;
+      align-items: flex-start;
    }
 
-   .case-study-card-image-left,
-   .case-study-card-image-right {
+
+   .navigation-list {
       display: flex;
-      flex-direction: column;
+      padding: 0;
+      align-items: flex-end;
+      margin-left: 0;
    }
 
-   #toggle {
-      position: absolute;
-      right: 50px;
-      top: 100px;
-      width: 40px;
-      height: 20px;
-   }
-
-   #toggle .indicator {
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      width: 20px;
-      height: 20px;
-   }
-
-   #toggle.active .indicator {
-      left: 19px;
+   .navigation-list__item {
+      margin: 10px 0;
+      line-height: 1.5;
    }
 }
 
-/* RESPONSIVE STYLING - GENERAL*/
-/* Styles for narrow screens: max-width 500px */
+
 @media (max-width: 700px) {
+
+   h1 {
+      font-size: 22px;
+      /* Slightly smaller headers */
+   }
+
+   h2,
+   p,
+   a {
+      font-size: 16px;
+      /* Standard text size for moderate screens */
+   }
+
+
    .page-header {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      /* Center everything in the column */
+
       padding: 10px;
    }
 
@@ -1321,42 +1325,59 @@ body {
 }
 
 
-/* Styles for medium screens: between 501px and 750px */
 
 
-/* Adjustments for moderate small screens: up to 750px */
-@media (max-width: 750px) {
-   h1 {
-      font-size: 22px;
-      /* Slightly smaller headers */
+@media (max-width: 530px) {
+
+.page-header {
+      padding-bottom: 50px;
    }
 
-   h2,
-   p,
-   a {
-      font-size: 16px;
-      /* Standard text size for moderate screens */
-   }
-}
-
-/* Adjustments for navigation layout at less than 900px */
-@media (max-width: 1050px) {
-   .page-header {
-      flex-direction: column;
-      align-items: flex-start;
+   .logo_text {
+      font-size: 40px;
+      padding-left: 10px;
    }
 
+   .logo_text .small {
+      font-size: 24px;
+   }
 
    .navigation-list {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      /* 3 columns, each taking equal space */
+      gap: 0px;
+      /* Optional: add some space between the grid items */
+      width: 100vw;
+      /* Ensure it spans the full viewport width */
       padding: 0;
-      align-items: flex-end;
-      margin-left: 0;
+      /* Optional: remove padding if necessary */
+      margin: 0;
+      /* Optional: remove margin if necessary */
+      box-sizing: border-box;
+      /* Ensure padding/margins are included in the element's total width */
    }
 
-   .navigation-list__item {
-      margin: 10px 0;
-      line-height: 1.5;
+
+
+   #toggle {
+      position: absolute;
+      right: 50px;
+      top: 170px;
+      width: 40px;
+      height: 20px;
+   }
+
+   #toggle .indicator {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 20px;
+      height: 20px;
+   }
+
+   #toggle.active .indicator {
+      left: 19px;
    }
 }
 
